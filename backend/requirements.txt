@@ -1,0 +1,6 @@
+modal
+supermemory
+pydantic
+httpx
+openai
+Pillow
