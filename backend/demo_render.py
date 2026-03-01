@@ -46,6 +46,8 @@ MIN_TRACK_FRAMES = 2        # frames before track is considered stable
 MAX_MISSING_FRAMES = 10     # frames before track is dropped
 TABLE_CLUSTER_DIST = 280    # max pixels between seated persons in same table
 IOU_MATCH_THRESH = 0.20     # minimum IoU for tracker matching
+STANDING_ASPECT_RATIO = 1.7 # bbox h/w above this → likely standing (not just "not moving")
+TABLE_REMATCH_DIST = 200    # max px between centroids to reuse a table slot
 
 # compressed state durations for 40s demo (seconds)
 STATE_THRESHOLDS = {
@@ -60,10 +62,6 @@ STAGGER_OFFSETS = [0, -8, -20, -30, -4, -14, -26, -10]
 
 WAIT_TIMES = {
     "EMPTY":       "Available",
-    "JUST_SEATED": "~45 min",
-    "MID_MEAL":    "~22 min",
-    "FINISHING":   "~8 min",
-    "CHECK_STAGE": "~3 min",
 }
 
 STATE_STYLE = {
@@ -120,13 +118,12 @@ def _is_moving(history, bbox_h):
     return avg > thresh
 
 
-def _wait_time(state, guests):
-    base = WAIT_TIMES.get(state, "Unknown")
-    if guests > 4 and state in ("JUST_SEATED", "MID_MEAL"):
-        return base.replace("45", "55").replace("22", "28")
-    if guests <= 2 and state in ("JUST_SEATED", "MID_MEAL"):
-        return base.replace("45", "38").replace("22", "18")
-    return base
+def _wait_time(state, first_seen_s, current_s):
+    if state == "EMPTY":
+        return "Available"
+    elapsed = max(0, current_s - first_seen_s)
+    m, s = divmod(int(elapsed), 60)
+    return f"{m}:{s:02d} seated"
 
 
 def _table_bio(table_state, guests, base_bio, table_id):
@@ -208,8 +205,12 @@ class PersonTracker:
             if len(trk.centroid_history) > MOTION_HISTORY + 3:
                 trk.centroid_history = trk.centroid_history[-(MOTION_HISTORY + 3):]
             bh = det[3] - det[1]
+            bw = det[2] - det[0]
             trk.moving = _is_moving(trk.centroid_history, bh)
-            trk.status = "Standing" if trk.moving else "Seated"
+            if trk.moving or bh / max(bw, 1) > STANDING_ASPECT_RATIO:
+                trk.status = "Standing"
+            else:
+                trk.status = "Seated"
             trk.missing = 0
             trk.age += 1
             matched_t.add(tid)
@@ -219,6 +220,9 @@ class PersonTracker:
             if di in matched_d:
                 continue
             t = PersonTrack(self._next, det[:4], frame_idx, det[4])
+            bh = det[3] - det[1]
+            bw = det[2] - det[0]
+            t.status = "Standing" if bh / max(bw, 1) > STANDING_ASPECT_RATIO else "Seated"
             self.tracks[self._next] = t
             self._next += 1
 
@@ -240,16 +244,17 @@ class PersonTracker:
 class TableGroup:
     __slots__ = (
         "id", "person_ids", "state", "first_seen_s", "guests",
-        "missing_frames",
+        "missing_frames", "centroid",
     )
 
-    def __init__(self, tid, pids, first_seen_s):
+    def __init__(self, tid, pids, first_seen_s, centroid=(0, 0)):
         self.id = tid
         self.person_ids = set(pids)
         self.state = "JUST_SEATED"
         self.first_seen_s = first_seen_s
         self.guests = len(pids)
         self.missing_frames = 0
+        self.centroid = centroid
 
 
 class TableManager:
@@ -267,13 +272,25 @@ class TableManager:
         current_s = frame_idx / self.fps
         clusters = self._cluster(seated_persons)
 
+        pid_pos = {pid: (cx, cy) for pid, cx, cy in seated_persons}
         matched_tables = set()
+        unmatched_clusters = []
 
         for cpids in clusters:
             cpids_set = set(cpids)
+            positions = [pid_pos[pid] for pid in cpids if pid in pid_pos]
+            if not positions:
+                continue
+            cluster_centroid = (
+                sum(p[0] for p in positions) / len(positions),
+                sum(p[1] for p in positions) / len(positions),
+            )
+
             best_tid = None
             best_overlap = 0
             for tid, tbl in self.tables.items():
+                if tid in matched_tables:
+                    continue
                 overlap = len(cpids_set & tbl.person_ids)
                 if overlap > best_overlap:
                     best_overlap = overlap
@@ -283,11 +300,39 @@ class TableManager:
                 tbl = self.tables[best_tid]
                 tbl.person_ids = cpids_set
                 tbl.guests = len(cpids_set)
+                tbl.centroid = cluster_centroid
                 tbl.missing_frames = 0
                 self._update_state(tbl, current_s, vl_state)
                 matched_tables.add(best_tid)
             else:
-                tbl = TableGroup(self._next, cpids, current_s)
+                unmatched_clusters.append((cpids, cluster_centroid))
+
+        # Spatial fallback: match remaining clusters to nearby existing tables
+        for cpids, centroid in unmatched_clusters:
+            cpids_set = set(cpids)
+            best_tid = None
+            best_dist = TABLE_REMATCH_DIST
+            for tid, tbl in self.tables.items():
+                if tid in matched_tables:
+                    continue
+                dist = math.hypot(
+                    centroid[0] - tbl.centroid[0],
+                    centroid[1] - tbl.centroid[1],
+                )
+                if dist < best_dist:
+                    best_dist = dist
+                    best_tid = tid
+
+            if best_tid:
+                tbl = self.tables[best_tid]
+                tbl.person_ids = cpids_set
+                tbl.guests = len(cpids_set)
+                tbl.centroid = centroid
+                tbl.missing_frames = 0
+                self._update_state(tbl, current_s, vl_state)
+                matched_tables.add(best_tid)
+            else:
+                tbl = TableGroup(self._next, cpids, current_s, centroid)
                 self.tables[self._next] = tbl
                 matched_tables.add(self._next)
                 self._next += 1
@@ -300,6 +345,14 @@ class TableManager:
                     tbl.state = "EMPTY"
                     tbl.person_ids = set()
                     tbl.guests = 0
+
+        # Purge tables that have been empty for a long time
+        to_remove = [
+            tid for tid, tbl in self.tables.items()
+            if tbl.state == "EMPTY" and tbl.missing_frames > self.fps * 10
+        ]
+        for tid in to_remove:
+            del self.tables[tid]
 
         # stagger initial tables for state diversity
         if not self._stagger_applied and current_s < 2.5 and len(self.tables) >= 2:
@@ -547,15 +600,16 @@ def render_demo_video(max_seconds: int = 40, fps_out: int = 12) -> dict:
         for x1, y1, x2, y2, _, _, color in other_dets:
             cv2.rectangle(frame, (x1, y1), (x2, y2), color, 1)
 
-        # ── draw person boxes ──
+        # ── draw person boxes (seated only — standing people are tracked but not boxed) ──
         for trk in stable:
+            if trk.status == "Standing":
+                continue
+
             x1, y1, x2, y2 = trk.bbox
 
             if trk.table_id is not None:
                 cidx = (trk.table_id - 1) % len(TABLE_COLORS)
                 color = TABLE_COLORS[cidx]
-            elif trk.status == "Standing":
-                color = STANDING_COLOR
             else:
                 color = (0, 229, 255)
 
@@ -573,13 +627,6 @@ def render_demo_video(max_seconds: int = 40, fps_out: int = 12) -> dict:
             ]:
                 cv2.line(frame, (cx, cy), (cx + cl * dx, cy), color, 3)
                 cv2.line(frame, (cx, cy), (cx, cy + cl * dy), color, 3)
-
-            # motion trail for standing/moving persons
-            if trk.moving and len(trk.centroid_history) >= 3:
-                pts = [(int(p[0]), int(p[1])) for p in trk.centroid_history[-6:]]
-                for i in range(1, len(pts)):
-                    alpha = int(80 + 100 * (i / len(pts)))
-                    cv2.line(frame, pts[i - 1], pts[i], (*color[:2], min(255, alpha)), 2)
 
         # ── PIL HUD ──
         pil = Image.fromarray(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)).convert("RGBA")
@@ -601,18 +648,19 @@ def render_demo_video(max_seconds: int = 40, fps_out: int = 12) -> dict:
         draw.text((W - 100, 16), f"F {count_out:04d}", fill=(100, 116, 139, 255), font=font_sm)
         draw.rectangle([0, 48, W, 50], fill=(0, 229, 255, 60))
 
-        # Person labels
+        # Person labels (seated only)
         for trk in stable:
+            if trk.status == "Standing":
+                continue
+
             x1, y1, x2, y2 = trk.bbox
             if trk.table_id is not None:
                 cidx = (trk.table_id - 1) % len(TABLE_COLORS)
                 color = TABLE_COLORS[cidx]
-            elif trk.status == "Standing":
-                color = STANDING_COLOR
             else:
                 color = (0, 229, 255)
 
-            tag = f"P{trk.id} {trk.status}"
+            tag = f"P{trk.id} Seated"
             if trk.table_id is not None:
                 tag += f" T{trk.table_id}"
             bb = draw.textbbox((0, 0), tag, font=font_sm)
@@ -638,7 +686,7 @@ def render_demo_video(max_seconds: int = 40, fps_out: int = 12) -> dict:
         tx = 16
         for tbl in tables[:6]:
             sc = STATE_STYLE.get(tbl.state, STATE_STYLE["EMPTY"])
-            wt = _wait_time(tbl.state, tbl.guests)
+            wt = _wait_time(tbl.state, tbl.first_seen_s, current_s)
             bio = _table_bio(tbl.state, tbl.guests, vl_bio, tbl.id)
 
             draw.rectangle([tx, py + 6, tx + 190, py + 72], fill=(15, 23, 42, 220), outline=(*sc["rgb"], 100))
@@ -682,7 +730,7 @@ def render_demo_video(max_seconds: int = 40, fps_out: int = 12) -> dict:
                     "id": tbl.id,
                     "state": tbl.state,
                     "guests": tbl.guests,
-                    "wait_time": _wait_time(tbl.state, tbl.guests),
+                    "wait_time": _wait_time(tbl.state, tbl.first_seen_s, current_s),
                     "seated_since": round(tbl.first_seen_s, 1),
                     "biometrics": bio,
                 })
