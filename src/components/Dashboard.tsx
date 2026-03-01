@@ -206,16 +206,14 @@ function MiniTable({
 
         {!isEmpty ? (
           <>
-            <div className="flex items-center justify-between text-[11px] mb-1">
+            <div className="flex items-center justify-between text-[11px] mb-2">
               <span className="text-argus-muted">{table.party_size} guests</span>
+              {table.predicted_turn_low != null && table.predicted_turn_high != null && (
+                <span className="text-argus-dim font-mono">
+                  ~{table.predicted_turn_low}-{table.predicted_turn_high}m
+                </span>
+              )}
             </div>
-            {(table.predicted_turn_minutes != null || (table.predicted_turn_low != null && table.predicted_turn_high != null)) && (
-              <p className="text-xs font-semibold text-cyan-400 mb-2">
-                Free in ~{table.predicted_turn_minutes != null
-                  ? `${table.predicted_turn_minutes}`
-                  : `${table.predicted_turn_low}-${table.predicted_turn_high}`} min
-              </p>
-            )}
 
             <div className="flex gap-3">
               <div className="flex-1">
