@@ -1,0 +1,4716 @@
+{
+  "duration": 40.0,
+  "fps": 12,
+  "frames": 480,
+  "entries": [
+    {
+      "t": 0.0,
+      "vl_state": "JUST_SEATED",
+      "vl_confidence": 0.9,
+      "total_guests": 0,
+      "seated": 0,
+      "standing": 0,
+      "energy_level": "relaxed",
+      "service_activity": "minimal",
+      "body_language": "Dominant body language suggests guests are engaged and waiting for service.",
+      "behavioral_notes": "The scene shows a group of four guests seated at a table, with menus open but no food served. They appear engaged, leaning forward slightly, suggesting they are waiting for their order. The overall atmosphere seems calm and relaxed.",
+      "tables": [],
+      "persons": []
+    },
+    {
+      "t": 1.0,
+      "vl_state": "JUST_SEATED",
+      "vl_confidence": 0.9,
+      "total_guests": 3,
+      "seated": 3,
+      "standing": 0,
+      "energy_level": "relaxed",
+      "service_activity": "minimal",
+      "body_language": "Dominant body language suggests guests are engaged and waiting for service.",
+      "behavioral_notes": "The scene shows a group of four guests seated at a table, with menus open but no food served. They appear engaged, leaning forward slightly, suggesting they are waiting for their order. The overall atmosphere seems calm and relaxed.",
+      "tables": [
+        {
+          "id": 1,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 0.1,
+          "biometrics": {
+            "stress": 0.1,
+            "engagement": 0.91,
+            "patience": 1,
+            "movement": 0.07,
+            "heart_rate": 71
+          }
+        },
+        {
+          "id": 2,
+          "state": "MID_MEAL",
+          "guests": 1,
+          "wait_time": "~18 min",
+          "seated_since": -7.9,
+          "biometrics": {
+            "stress": 0.11,
+            "engagement": 0.83,
+            "patience": 0.87,
+            "movement": 0.07,
+            "heart_rate": 70
+          }
+        },
+        {
+          "id": 3,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 0.9,
+          "biometrics": {
+            "stress": 0.12,
+            "engagement": 0.9,
+            "patience": 0.96,
+            "movement": 0.07,
+            "heart_rate": 73
+          }
+        }
+      ],
+      "persons": [
+        {
+          "id": 1,
+          "status": "Seated",
+          "table_id": 1
+        },
+        {
+          "id": 2,
+          "status": "Seated",
+          "table_id": 2
+        },
+        {
+          "id": 3,
+          "status": "Seated",
+          "table_id": 3
+        }
+      ]
+    },
+    {
+      "t": 2.0,
+      "vl_state": "JUST_SEATED",
+      "vl_confidence": 0.9,
+      "total_guests": 4,
+      "seated": 3,
+      "standing": 1,
+      "energy_level": "relaxed",
+      "service_activity": "minimal",
+      "body_language": "Dominant body language suggests guests are engaged and waiting for service.",
+      "behavioral_notes": "The scene shows a group of four guests seated at a table, with menus open but no food served. They appear engaged, leaning forward slightly, suggesting they are waiting for their order. The overall atmosphere seems calm and relaxed.",
+      "tables": [
+        {
+          "id": 1,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 0.1,
+          "biometrics": {
+            "stress": 0.1,
+            "engagement": 0.91,
+            "patience": 1,
+            "movement": 0.07,
+            "heart_rate": 71
+          }
+        },
+        {
+          "id": 2,
+          "state": "MID_MEAL",
+          "guests": 2,
+          "wait_time": "~18 min",
+          "seated_since": -7.9,
+          "biometrics": {
+            "stress": 0.11,
+            "engagement": 0.83,
+            "patience": 0.87,
+            "movement": 0.07,
+            "heart_rate": 70
+          }
+        },
+        {
+          "id": 3,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 0.9,
+          "biometrics": {
+            "stress": 0.12,
+            "engagement": 0.9,
+            "patience": 0.96,
+            "movement": 0.07,
+            "heart_rate": 73
+          }
+        }
+      ],
+      "persons": [
+        {
+          "id": 1,
+          "status": "Seated",
+          "table_id": 1
+        },
+        {
+          "id": 2,
+          "status": "Seated",
+          "table_id": 2
+        },
+        {
+          "id": 3,
+          "status": "Standing",
+          "table_id": 3
+        },
+        {
+          "id": 4,
+          "status": "Seated",
+          "table_id": 2
+        }
+      ]
+    },
+    {
+      "t": 3.0,
+      "vl_state": "JUST_SEATED",
+      "vl_confidence": 0.8,
+      "total_guests": 4,
+      "seated": 4,
+      "standing": 0,
+      "energy_level": "relaxed",
+      "service_activity": "active",
+      "body_language": "Most guests are leaning forward, indicating engagement.",
+      "behavioral_notes": "The scene shows a moderate level of activity as guests are seated and appear to be engaging with menus, possibly discussing their orders. The presence of waitstaff suggests active service.",
+      "tables": [
+        {
+          "id": 1,
+          "state": "JUST_SEATED",
+          "guests": 2,
+          "wait_time": "~38 min",
+          "seated_since": 0.1,
+          "biometrics": {
+            "stress": 0.1,
+            "engagement": 0.81,
+            "patience": 1,
+            "movement": 0.17,
+            "heart_rate": 71
+          }
+        },
+        {
+          "id": 2,
+          "state": "MID_MEAL",
+          "guests": 2,
+          "wait_time": "~18 min",
+          "seated_since": -7.9,
+          "biometrics": {
+            "stress": 0.11,
+            "engagement": 0.73,
+            "patience": 0.87,
+            "movement": 0.17,
+            "heart_rate": 70
+          }
+        },
+        {
+          "id": 3,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 0.9,
+          "biometrics": {
+            "stress": 0.12,
+            "engagement": 0.8,
+            "patience": 0.96,
+            "movement": 0.17,
+            "heart_rate": 73
+          }
+        }
+      ],
+      "persons": [
+        {
+          "id": 1,
+          "status": "Seated",
+          "table_id": 1
+        },
+        {
+          "id": 2,
+          "status": "Seated",
+          "table_id": 2
+        },
+        {
+          "id": 3,
+          "status": "Seated",
+          "table_id": 3
+        },
+        {
+          "id": 5,
+          "status": "Seated",
+          "table_id": 2
+        }
+      ]
+    },
+    {
+      "t": 4.0,
+      "vl_state": "JUST_SEATED",
+      "vl_confidence": 0.8,
+      "total_guests": 5,
+      "seated": 3,
+      "standing": 2,
+      "energy_level": "relaxed",
+      "service_activity": "active",
+      "body_language": "Most guests are leaning forward, indicating engagement.",
+      "behavioral_notes": "The scene shows a moderate level of activity as guests are seated and appear to be engaging with menus, possibly discussing their orders. The presence of waitstaff suggests active service.",
+      "tables": [
+        {
+          "id": 1,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 0.1,
+          "biometrics": {
+            "stress": 0.1,
+            "engagement": 0.81,
+            "patience": 1,
+            "movement": 0.17,
+            "heart_rate": 71
+          }
+        },
+        {
+          "id": 2,
+          "state": "MID_MEAL",
+          "guests": 3,
+          "wait_time": "~22 min",
+          "seated_since": -7.9,
+          "biometrics": {
+            "stress": 0.11,
+            "engagement": 0.73,
+            "patience": 0.87,
+            "movement": 0.17,
+            "heart_rate": 70
+          }
+        },
+        {
+          "id": 3,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 0.9,
+          "biometrics": {
+            "stress": 0.12,
+            "engagement": 0.8,
+            "patience": 0.96,
+            "movement": 0.17,
+            "heart_rate": 73
+          }
+        }
+      ],
+      "persons": [
+        {
+          "id": 1,
+          "status": "Seated",
+          "table_id": 2
+        },
+        {
+          "id": 2,
+          "status": "Seated",
+          "table_id": 2
+        },
+        {
+          "id": 3,
+          "status": "Standing",
+          "table_id": 3
+        },
+        {
+          "id": 6,
+          "status": "Standing",
+          "table_id": null
+        },
+        {
+          "id": 7,
+          "status": "Seated",
+          "table_id": 2
+        }
+      ]
+    },
+    {
+      "t": 5.0,
+      "vl_state": "JUST_SEATED",
+      "vl_confidence": 0.8,
+      "total_guests": 4,
+      "seated": 2,
+      "standing": 2,
+      "energy_level": "relaxed",
+      "service_activity": "active",
+      "body_language": "Most guests are leaning forward, indicating engagement.",
+      "behavioral_notes": "The scene shows a moderate level of activity as guests are seated and appear to be engaging with menus, possibly discussing their orders. The presence of waitstaff suggests active service.",
+      "tables": [
+        {
+          "id": 1,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 0.1,
+          "biometrics": {
+            "stress": 0.1,
+            "engagement": 0.81,
+            "patience": 1,
+            "movement": 0.17,
+            "heart_rate": 71
+          }
+        },
+        {
+          "id": 2,
+          "state": "MID_MEAL",
+          "guests": 2,
+          "wait_time": "~18 min",
+          "seated_since": -7.9,
+          "biometrics": {
+            "stress": 0.11,
+            "engagement": 0.73,
+            "patience": 0.87,
+            "movement": 0.17,
+            "heart_rate": 70
+          }
+        },
+        {
+          "id": 3,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 0.9,
+          "biometrics": {
+            "stress": 0.12,
+            "engagement": 0.8,
+            "patience": 0.96,
+            "movement": 0.17,
+            "heart_rate": 73
+          }
+        }
+      ],
+      "persons": [
+        {
+          "id": 2,
+          "status": "Seated",
+          "table_id": 2
+        },
+        {
+          "id": 3,
+          "status": "Standing",
+          "table_id": 3
+        },
+        {
+          "id": 6,
+          "status": "Standing",
+          "table_id": null
+        },
+        {
+          "id": 8,
+          "status": "Seated",
+          "table_id": 2
+        }
+      ]
+    },
+    {
+      "t": 6.0,
+      "vl_state": "JUST_SEATED",
+      "vl_confidence": 0.9,
+      "total_guests": 7,
+      "seated": 4,
+      "standing": 3,
+      "energy_level": "relaxed",
+      "service_activity": "active",
+      "body_language": "Most guests are leaning forward, indicating engagement.",
+      "behavioral_notes": "The scene shows a moderate level of activity as guests are seated and appear to be ordering or waiting for their meals. The presence of menus suggests they are in the process of selecting their food.",
+      "tables": [
+        {
+          "id": 1,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 0.1,
+          "biometrics": {
+            "stress": 0.1,
+            "engagement": 0.91,
+            "patience": 0.81,
+            "movement": 0.17,
+            "heart_rate": 71
+          }
+        },
+        {
+          "id": 2,
+          "state": "MID_MEAL",
+          "guests": 3,
+          "wait_time": "~22 min",
+          "seated_since": -7.9,
+          "biometrics": {
+            "stress": 0.11,
+            "engagement": 0.83,
+            "patience": 0.67,
+            "movement": 0.17,
+            "heart_rate": 70
+          }
+        },
+        {
+          "id": 4,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 5.3,
+          "biometrics": {
+            "stress": 0.2,
+            "engagement": 0.96,
+            "patience": 0.75,
+            "movement": 0.16,
+            "heart_rate": 67
+          }
+        },
+        {
+          "id": 5,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 5.7,
+          "biometrics": {
+            "stress": 0.13,
+            "engagement": 0.97,
+            "patience": 0.72,
+            "movement": 0.18,
+            "heart_rate": 66
+          }
+        },
+        {
+          "id": 6,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 5.7,
+          "biometrics": {
+            "stress": 0.2,
+            "engagement": 0.98,
+            "patience": 0.74,
+            "movement": 0.16,
+            "heart_rate": 73
+          }
+        }
+      ],
+      "persons": [
+        {
+          "id": 2,
+          "status": "Seated",
+          "table_id": 2
+        },
+        {
+          "id": 6,
+          "status": "Standing",
+          "table_id": 5
+        },
+        {
+          "id": 9,
+          "status": "Seated",
+          "table_id": 2
+        },
+        {
+          "id": 10,
+          "status": "Standing",
+          "table_id": 4
+        },
+        {
+          "id": 11,
+          "status": "Standing",
+          "table_id": null
+        },
+        {
+          "id": 12,
+          "status": "Seated",
+          "table_id": 6
+        },
+        {
+          "id": 13,
+          "status": "Seated",
+          "table_id": 2
+        }
+      ]
+    },
+    {
+      "t": 7.0,
+      "vl_state": "JUST_SEATED",
+      "vl_confidence": 0.9,
+      "total_guests": 6,
+      "seated": 4,
+      "standing": 2,
+      "energy_level": "relaxed",
+      "service_activity": "active",
+      "body_language": "Most guests are leaning forward, indicating engagement.",
+      "behavioral_notes": "The scene shows a moderate level of activity as guests are seated and appear to be ordering or waiting for their meals. The presence of menus suggests they are in the process of selecting their food.",
+      "tables": [
+        {
+          "id": 1,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 0.1,
+          "biometrics": {
+            "stress": 0.1,
+            "engagement": 0.91,
+            "patience": 0.81,
+            "movement": 0.17,
+            "heart_rate": 71
+          }
+        },
+        {
+          "id": 2,
+          "state": "MID_MEAL",
+          "guests": 2,
+          "wait_time": "~18 min",
+          "seated_since": -7.9,
+          "biometrics": {
+            "stress": 0.11,
+            "engagement": 0.83,
+            "patience": 0.67,
+            "movement": 0.17,
+            "heart_rate": 70
+          }
+        },
+        {
+          "id": 4,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 5.3,
+          "biometrics": {
+            "stress": 0.2,
+            "engagement": 0.96,
+            "patience": 0.75,
+            "movement": 0.16,
+            "heart_rate": 67
+          }
+        },
+        {
+          "id": 5,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 5.7,
+          "biometrics": {
+            "stress": 0.13,
+            "engagement": 0.97,
+            "patience": 0.72,
+            "movement": 0.18,
+            "heart_rate": 66
+          }
+        },
+        {
+          "id": 6,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 5.7,
+          "biometrics": {
+            "stress": 0.2,
+            "engagement": 0.98,
+            "patience": 0.74,
+            "movement": 0.16,
+            "heart_rate": 73
+          }
+        }
+      ],
+      "persons": [
+        {
+          "id": 2,
+          "status": "Seated",
+          "table_id": 2
+        },
+        {
+          "id": 6,
+          "status": "Seated",
+          "table_id": 5
+        },
+        {
+          "id": 10,
+          "status": "Standing",
+          "table_id": 4
+        },
+        {
+          "id": 11,
+          "status": "Standing",
+          "table_id": null
+        },
+        {
+          "id": 12,
+          "status": "Seated",
+          "table_id": 6
+        },
+        {
+          "id": 13,
+          "status": "Seated",
+          "table_id": 2
+        }
+      ]
+    },
+    {
+      "t": 8.0,
+      "vl_state": "JUST_SEATED",
+      "vl_confidence": 0.9,
+      "total_guests": 7,
+      "seated": 5,
+      "standing": 2,
+      "energy_level": "relaxed",
+      "service_activity": "active",
+      "body_language": "Most guests are leaning forward, indicating engagement.",
+      "behavioral_notes": "The scene shows a moderate level of activity as guests are seated and appear to be ordering or waiting for their meals. The presence of menus suggests they are in the process of selecting their food.",
+      "tables": [
+        {
+          "id": 2,
+          "state": "MID_MEAL",
+          "guests": 4,
+          "wait_time": "~22 min",
+          "seated_since": -7.9,
+          "biometrics": {
+            "stress": 0.11,
+            "engagement": 0.83,
+            "patience": 0.67,
+            "movement": 0.17,
+            "heart_rate": 70
+          }
+        },
+        {
+          "id": 4,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 5.3,
+          "biometrics": {
+            "stress": 0.2,
+            "engagement": 0.96,
+            "patience": 0.75,
+            "movement": 0.16,
+            "heart_rate": 67
+          }
+        },
+        {
+          "id": 5,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 5.7,
+          "biometrics": {
+            "stress": 0.13,
+            "engagement": 0.97,
+            "patience": 0.72,
+            "movement": 0.18,
+            "heart_rate": 66
+          }
+        },
+        {
+          "id": 6,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 5.7,
+          "biometrics": {
+            "stress": 0.2,
+            "engagement": 0.98,
+            "patience": 0.74,
+            "movement": 0.16,
+            "heart_rate": 73
+          }
+        }
+      ],
+      "persons": [
+        {
+          "id": 2,
+          "status": "Seated",
+          "table_id": 2
+        },
+        {
+          "id": 6,
+          "status": "Seated",
+          "table_id": 5
+        },
+        {
+          "id": 10,
+          "status": "Standing",
+          "table_id": null
+        },
+        {
+          "id": 11,
+          "status": "Seated",
+          "table_id": 2
+        },
+        {
+          "id": 12,
+          "status": "Standing",
+          "table_id": 6
+        },
+        {
+          "id": 14,
+          "status": "Seated",
+          "table_id": 2
+        },
+        {
+          "id": 15,
+          "status": "Seated",
+          "table_id": 2
+        }
+      ]
+    },
+    {
+      "t": 9.0,
+      "vl_state": "JUST_SEATED",
+      "vl_confidence": 0.9,
+      "total_guests": 9,
+      "seated": 5,
+      "standing": 4,
+      "energy_level": "relaxed",
+      "service_activity": "minimal",
+      "body_language": "Most individuals appear engaged, leaning slightly forward as they interact with each other.",
+      "behavioral_notes": "The scene depicts a group of four individuals seated at a table, seemingly in the process of ordering or discussing their meal options. The presence of menus suggests they have just arrived and are in the initial stages of dining. The calm demeanor and body language indicate a relaxed atmosphere without any signs of urgency or stress.",
+      "tables": [
+        {
+          "id": 2,
+          "state": "MID_MEAL",
+          "guests": 3,
+          "wait_time": "~22 min",
+          "seated_since": -7.9,
+          "biometrics": {
+            "stress": 0.11,
+            "engagement": 0.83,
+            "patience": 0.87,
+            "movement": 0.17,
+            "heart_rate": 70
+          }
+        },
+        {
+          "id": 4,
+          "state": "JUST_SEATED",
+          "guests": 2,
+          "wait_time": "~38 min",
+          "seated_since": 5.3,
+          "biometrics": {
+            "stress": 0.2,
+            "engagement": 0.96,
+            "patience": 0.95,
+            "movement": 0.16,
+            "heart_rate": 67
+          }
+        },
+        {
+          "id": 5,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 5.7,
+          "biometrics": {
+            "stress": 0.13,
+            "engagement": 0.97,
+            "patience": 0.92,
+            "movement": 0.18,
+            "heart_rate": 66
+          }
+        },
+        {
+          "id": 6,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 5.7,
+          "biometrics": {
+            "stress": 0.2,
+            "engagement": 0.98,
+            "patience": 0.94,
+            "movement": 0.16,
+            "heart_rate": 73
+          }
+        },
+        {
+          "id": 7,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 8.1,
+          "biometrics": {
+            "stress": 0.15,
+            "engagement": 0.87,
+            "patience": 0.94,
+            "movement": 0.17,
+            "heart_rate": 74
+          }
+        }
+      ],
+      "persons": [
+        {
+          "id": 2,
+          "status": "Seated",
+          "table_id": 2
+        },
+        {
+          "id": 6,
+          "status": "Seated",
+          "table_id": 5
+        },
+        {
+          "id": 10,
+          "status": "Standing",
+          "table_id": null
+        },
+        {
+          "id": 11,
+          "status": "Standing",
+          "table_id": null
+        },
+        {
+          "id": 12,
+          "status": "Standing",
+          "table_id": 6
+        },
+        {
+          "id": 14,
+          "status": "Seated",
+          "table_id": 2
+        },
+        {
+          "id": 16,
+          "status": "Standing",
+          "table_id": 7
+        },
+        {
+          "id": 17,
+          "status": "Seated",
+          "table_id": 2
+        },
+        {
+          "id": 18,
+          "status": "Seated",
+          "table_id": 4
+        }
+      ]
+    },
+    {
+      "t": 10.0,
+      "vl_state": "JUST_SEATED",
+      "vl_confidence": 0.9,
+      "total_guests": 8,
+      "seated": 5,
+      "standing": 3,
+      "energy_level": "relaxed",
+      "service_activity": "minimal",
+      "body_language": "Most individuals appear engaged, leaning slightly forward as they interact with each other.",
+      "behavioral_notes": "The scene depicts a group of four individuals seated at a table, seemingly in the process of ordering or discussing their meal options. The presence of menus suggests they have just arrived and are in the initial stages of dining. The calm demeanor and body language indicate a relaxed atmosphere without any signs of urgency or stress.",
+      "tables": [
+        {
+          "id": 2,
+          "state": "MID_MEAL",
+          "guests": 3,
+          "wait_time": "~22 min",
+          "seated_since": -7.9,
+          "biometrics": {
+            "stress": 0.11,
+            "engagement": 0.83,
+            "patience": 0.87,
+            "movement": 0.17,
+            "heart_rate": 70
+          }
+        },
+        {
+          "id": 4,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 5.3,
+          "biometrics": {
+            "stress": 0.2,
+            "engagement": 0.96,
+            "patience": 0.95,
+            "movement": 0.16,
+            "heart_rate": 67
+          }
+        },
+        {
+          "id": 5,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 5.7,
+          "biometrics": {
+            "stress": 0.13,
+            "engagement": 0.97,
+            "patience": 0.92,
+            "movement": 0.18,
+            "heart_rate": 66
+          }
+        },
+        {
+          "id": 6,
+          "state": "JUST_SEATED",
+          "guests": 2,
+          "wait_time": "~38 min",
+          "seated_since": 5.7,
+          "biometrics": {
+            "stress": 0.2,
+            "engagement": 0.98,
+            "patience": 0.94,
+            "movement": 0.16,
+            "heart_rate": 73
+          }
+        },
+        {
+          "id": 7,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 8.1,
+          "biometrics": {
+            "stress": 0.15,
+            "engagement": 0.87,
+            "patience": 0.94,
+            "movement": 0.17,
+            "heart_rate": 74
+          }
+        }
+      ],
+      "persons": [
+        {
+          "id": 2,
+          "status": "Seated",
+          "table_id": 2
+        },
+        {
+          "id": 6,
+          "status": "Standing",
+          "table_id": 5
+        },
+        {
+          "id": 12,
+          "status": "Seated",
+          "table_id": 6
+        },
+        {
+          "id": 14,
+          "status": "Seated",
+          "table_id": 2
+        },
+        {
+          "id": 16,
+          "status": "Standing",
+          "table_id": 7
+        },
+        {
+          "id": 17,
+          "status": "Seated",
+          "table_id": 2
+        },
+        {
+          "id": 18,
+          "status": "Seated",
+          "table_id": 6
+        },
+        {
+          "id": 20,
+          "status": "Standing",
+          "table_id": null
+        }
+      ]
+    },
+    {
+      "t": 11.0,
+      "vl_state": "JUST_SEATED",
+      "vl_confidence": 0.9,
+      "total_guests": 10,
+      "seated": 9,
+      "standing": 1,
+      "energy_level": "relaxed",
+      "service_activity": "minimal",
+      "body_language": "Most individuals appear engaged, leaning slightly forward as they interact with each other.",
+      "behavioral_notes": "The scene depicts a group of four individuals seated at a table, seemingly in the process of ordering or discussing their meal options. The presence of menus suggests they have just arrived and are in the initial stages of dining. The calm demeanor and body language indicate a relaxed atmosphere without any signs of urgency or stress.",
+      "tables": [
+        {
+          "id": 2,
+          "state": "MID_MEAL",
+          "guests": 5,
+          "wait_time": "~28 min",
+          "seated_since": -7.9,
+          "biometrics": {
+            "stress": 0.11,
+            "engagement": 0.83,
+            "patience": 0.87,
+            "movement": 0.17,
+            "heart_rate": 70
+          }
+        },
+        {
+          "id": 4,
+          "state": "JUST_SEATED",
+          "guests": 3,
+          "wait_time": "~45 min",
+          "seated_since": 5.3,
+          "biometrics": {
+            "stress": 0.2,
+            "engagement": 0.96,
+            "patience": 0.95,
+            "movement": 0.16,
+            "heart_rate": 67
+          }
+        },
+        {
+          "id": 5,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 5.7,
+          "biometrics": {
+            "stress": 0.13,
+            "engagement": 0.97,
+            "patience": 0.92,
+            "movement": 0.18,
+            "heart_rate": 66
+          }
+        },
+        {
+          "id": 6,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 5.7,
+          "biometrics": {
+            "stress": 0.2,
+            "engagement": 0.98,
+            "patience": 0.94,
+            "movement": 0.16,
+            "heart_rate": 73
+          }
+        },
+        {
+          "id": 7,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 8.1,
+          "biometrics": {
+            "stress": 0.15,
+            "engagement": 0.87,
+            "patience": 0.94,
+            "movement": 0.17,
+            "heart_rate": 74
+          }
+        }
+      ],
+      "persons": [
+        {
+          "id": 2,
+          "status": "Seated",
+          "table_id": 2
+        },
+        {
+          "id": 6,
+          "status": "Seated",
+          "table_id": 5
+        },
+        {
+          "id": 12,
+          "status": "Seated",
+          "table_id": 4
+        },
+        {
+          "id": 14,
+          "status": "Seated",
+          "table_id": 2
+        },
+        {
+          "id": 16,
+          "status": "Standing",
+          "table_id": 7
+        },
+        {
+          "id": 17,
+          "status": "Seated",
+          "table_id": 2
+        },
+        {
+          "id": 18,
+          "status": "Seated",
+          "table_id": 6
+        },
+        {
+          "id": 20,
+          "status": "Seated",
+          "table_id": 2
+        },
+        {
+          "id": 21,
+          "status": "Seated",
+          "table_id": 2
+        },
+        {
+          "id": 22,
+          "status": "Seated",
+          "table_id": 4
+        }
+      ]
+    },
+    {
+      "t": 12.0,
+      "vl_state": "JUST_SEATED",
+      "vl_confidence": 0.9,
+      "total_guests": 8,
+      "seated": 6,
+      "standing": 2,
+      "energy_level": "relaxed",
+      "service_activity": "minimal",
+      "body_language": "Most guests are leaning forward, indicating engagement with the menu.",
+      "behavioral_notes": "The scene shows a group of four guests seated at a table, with one person holding a menu. The body language suggests they are engaged but not actively eating or leaving. The environment appears calm, with no signs of urgency or activity from the staff.",
+      "tables": [
+        {
+          "id": 2,
+          "state": "MID_MEAL",
+          "guests": 4,
+          "wait_time": "~22 min",
+          "seated_since": -7.9,
+          "biometrics": {
+            "stress": 0.11,
+            "engagement": 0.83,
+            "patience": 0.87,
+            "movement": 0.07,
+            "heart_rate": 70
+          }
+        },
+        {
+          "id": 4,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 5.3,
+          "biometrics": {
+            "stress": 0.2,
+            "engagement": 0.96,
+            "patience": 0.95,
+            "movement": 0.06,
+            "heart_rate": 67
+          }
+        },
+        {
+          "id": 6,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 5.7,
+          "biometrics": {
+            "stress": 0.2,
+            "engagement": 0.98,
+            "patience": 0.94,
+            "movement": 0.06,
+            "heart_rate": 73
+          }
+        },
+        {
+          "id": 7,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 8.1,
+          "biometrics": {
+            "stress": 0.15,
+            "engagement": 0.87,
+            "patience": 0.94,
+            "movement": 0.07,
+            "heart_rate": 74
+          }
+        },
+        {
+          "id": 8,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 12.0,
+          "biometrics": {
+            "stress": 0.17,
+            "engagement": 0.97,
+            "patience": 0.9,
+            "movement": 0.1,
+            "heart_rate": 67
+          }
+        }
+      ],
+      "persons": [
+        {
+          "id": 2,
+          "status": "Seated",
+          "table_id": 2
+        },
+        {
+          "id": 6,
+          "status": "Seated",
+          "table_id": 4
+        },
+        {
+          "id": 12,
+          "status": "Standing",
+          "table_id": null
+        },
+        {
+          "id": 14,
+          "status": "Seated",
+          "table_id": 2
+        },
+        {
+          "id": 17,
+          "status": "Seated",
+          "table_id": 2
+        },
+        {
+          "id": 18,
+          "status": "Standing",
+          "table_id": 6
+        },
+        {
+          "id": 20,
+          "status": "Seated",
+          "table_id": 2
+        },
+        {
+          "id": 23,
+          "status": "Seated",
+          "table_id": 8
+        }
+      ]
+    },
+    {
+      "t": 13.0,
+      "vl_state": "JUST_SEATED",
+      "vl_confidence": 0.9,
+      "total_guests": 13,
+      "seated": 11,
+      "standing": 2,
+      "energy_level": "relaxed",
+      "service_activity": "minimal",
+      "body_language": "Most guests are leaning forward, indicating engagement with the menu.",
+      "behavioral_notes": "The scene shows a group of four guests seated at a table, with one person holding a menu. The body language suggests they are engaged but not actively eating or leaving. The environment appears calm, with no signs of urgency or activity from the staff.",
+      "tables": [
+        {
+          "id": 2,
+          "state": "FINISHING",
+          "guests": 10,
+          "wait_time": "~8 min",
+          "seated_since": -7.9,
+          "biometrics": {
+            "stress": 0.24,
+            "engagement": 0.68,
+            "patience": 0.67,
+            "movement": 0.19,
+            "heart_rate": 70
+          }
+        },
+        {
+          "id": 4,
+          "state": "MID_MEAL",
+          "guests": 1,
+          "wait_time": "~18 min",
+          "seated_since": 5.3,
+          "biometrics": {
+            "stress": 0.2,
+            "engagement": 0.89,
+            "patience": 0.92,
+            "movement": 0.06,
+            "heart_rate": 67
+          }
+        },
+        {
+          "id": 6,
+          "state": "MID_MEAL",
+          "guests": 1,
+          "wait_time": "~18 min",
+          "seated_since": 5.7,
+          "biometrics": {
+            "stress": 0.2,
+            "engagement": 0.91,
+            "patience": 0.91,
+            "movement": 0.06,
+            "heart_rate": 73
+          }
+        },
+        {
+          "id": 7,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 8.1,
+          "biometrics": {
+            "stress": 0.15,
+            "engagement": 0.87,
+            "patience": 0.94,
+            "movement": 0.07,
+            "heart_rate": 74
+          }
+        },
+        {
+          "id": 8,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 12.0,
+          "biometrics": {
+            "stress": 0.17,
+            "engagement": 0.97,
+            "patience": 0.9,
+            "movement": 0.1,
+            "heart_rate": 67
+          }
+        }
+      ],
+      "persons": [
+        {
+          "id": 2,
+          "status": "Standing",
+          "table_id": null
+        },
+        {
+          "id": 6,
+          "status": "Seated",
+          "table_id": 4
+        },
+        {
+          "id": 12,
+          "status": "Standing",
+          "table_id": null
+        },
+        {
+          "id": 14,
+          "status": "Seated",
+          "table_id": 2
+        },
+        {
+          "id": 18,
+          "status": "Seated",
+          "table_id": 6
+        },
+        {
+          "id": 20,
+          "status": "Seated",
+          "table_id": 2
+        },
+        {
+          "id": 23,
+          "status": "Seated",
+          "table_id": 8
+        },
+        {
+          "id": 24,
+          "status": "Seated",
+          "table_id": 2
+        },
+        {
+          "id": 25,
+          "status": "Seated",
+          "table_id": 2
+        },
+        {
+          "id": 26,
+          "status": "Seated",
+          "table_id": 2
+        },
+        {
+          "id": 28,
+          "status": "Seated",
+          "table_id": 2
+        },
+        {
+          "id": 29,
+          "status": "Seated",
+          "table_id": 2
+        },
+        {
+          "id": 30,
+          "status": "Seated",
+          "table_id": 2
+        }
+      ]
+    },
+    {
+      "t": 14.0,
+      "vl_state": "JUST_SEATED",
+      "vl_confidence": 0.9,
+      "total_guests": 10,
+      "seated": 7,
+      "standing": 3,
+      "energy_level": "relaxed",
+      "service_activity": "minimal",
+      "body_language": "Most guests are leaning forward, indicating engagement with the menu.",
+      "behavioral_notes": "The scene shows a group of four guests seated at a table, with one person holding a menu. The body language suggests they are engaged but not actively eating or leaving. The environment appears calm, with no signs of urgency or activity from the staff.",
+      "tables": [
+        {
+          "id": 2,
+          "state": "FINISHING",
+          "guests": 4,
+          "wait_time": "~8 min",
+          "seated_since": -7.9,
+          "biometrics": {
+            "stress": 0.24,
+            "engagement": 0.68,
+            "patience": 0.67,
+            "movement": 0.19,
+            "heart_rate": 70
+          }
+        },
+        {
+          "id": 4,
+          "state": "MID_MEAL",
+          "guests": 1,
+          "wait_time": "~18 min",
+          "seated_since": 5.3,
+          "biometrics": {
+            "stress": 0.2,
+            "engagement": 0.89,
+            "patience": 0.92,
+            "movement": 0.06,
+            "heart_rate": 67
+          }
+        },
+        {
+          "id": 6,
+          "state": "MID_MEAL",
+          "guests": 1,
+          "wait_time": "~18 min",
+          "seated_since": 5.7,
+          "biometrics": {
+            "stress": 0.2,
+            "engagement": 0.91,
+            "patience": 0.91,
+            "movement": 0.06,
+            "heart_rate": 73
+          }
+        },
+        {
+          "id": 7,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 8.1,
+          "biometrics": {
+            "stress": 0.15,
+            "engagement": 0.87,
+            "patience": 0.94,
+            "movement": 0.07,
+            "heart_rate": 74
+          }
+        },
+        {
+          "id": 8,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 12.0,
+          "biometrics": {
+            "stress": 0.17,
+            "engagement": 0.97,
+            "patience": 0.9,
+            "movement": 0.1,
+            "heart_rate": 67
+          }
+        },
+        {
+          "id": 9,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 13.9,
+          "biometrics": {
+            "stress": 0.13,
+            "engagement": 0.92,
+            "patience": 0.91,
+            "movement": 0.07,
+            "heart_rate": 66
+          }
+        },
+        {
+          "id": 10,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 14.0,
+          "biometrics": {
+            "stress": 0.17,
+            "engagement": 0.89,
+            "patience": 0.9,
+            "movement": 0.13,
+            "heart_rate": 67
+          }
+        }
+      ],
+      "persons": [
+        {
+          "id": 2,
+          "status": "Seated",
+          "table_id": 2
+        },
+        {
+          "id": 6,
+          "status": "Standing",
+          "table_id": 4
+        },
+        {
+          "id": 12,
+          "status": "Standing",
+          "table_id": null
+        },
+        {
+          "id": 18,
+          "status": "Seated",
+          "table_id": 6
+        },
+        {
+          "id": 23,
+          "status": "Standing",
+          "table_id": 8
+        },
+        {
+          "id": 25,
+          "status": "Seated",
+          "table_id": 2
+        },
+        {
+          "id": 28,
+          "status": "Seated",
+          "table_id": 2
+        },
+        {
+          "id": 29,
+          "status": "Seated",
+          "table_id": 2
+        },
+        {
+          "id": 31,
+          "status": "Seated",
+          "table_id": 9
+        },
+        {
+          "id": 32,
+          "status": "Seated",
+          "table_id": 10
+        }
+      ]
+    },
+    {
+      "t": 15.0,
+      "vl_state": "JUST_SEATED",
+      "vl_confidence": 0.9,
+      "total_guests": 9,
+      "seated": 4,
+      "standing": 5,
+      "energy_level": "relaxed",
+      "service_activity": "minimal",
+      "body_language": "Most guests are leaning forward, indicating engagement.",
+      "behavioral_notes": "The scene shows a calm atmosphere with guests seated at tables, menus open, and no active eating. Waitstaff are not visible, suggesting minimal service activity. The guests seem to be waiting for their orders.",
+      "tables": [
+        {
+          "id": 2,
+          "state": "FINISHING",
+          "guests": 2,
+          "wait_time": "~8 min",
+          "seated_since": -7.9,
+          "biometrics": {
+            "stress": 0.24,
+            "engagement": 0.68,
+            "patience": 0.67,
+            "movement": 0.19,
+            "heart_rate": 70
+          }
+        },
+        {
+          "id": 4,
+          "state": "MID_MEAL",
+          "guests": 1,
+          "wait_time": "~18 min",
+          "seated_since": 5.3,
+          "biometrics": {
+            "stress": 0.2,
+            "engagement": 0.89,
+            "patience": 0.92,
+            "movement": 0.06,
+            "heart_rate": 67
+          }
+        },
+        {
+          "id": 6,
+          "state": "MID_MEAL",
+          "guests": 1,
+          "wait_time": "~18 min",
+          "seated_since": 5.7,
+          "biometrics": {
+            "stress": 0.2,
+            "engagement": 0.91,
+            "patience": 0.91,
+            "movement": 0.06,
+            "heart_rate": 73
+          }
+        },
+        {
+          "id": 8,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 12.0,
+          "biometrics": {
+            "stress": 0.17,
+            "engagement": 0.97,
+            "patience": 0.9,
+            "movement": 0.1,
+            "heart_rate": 67
+          }
+        },
+        {
+          "id": 9,
+          "state": "JUST_SEATED",
+          "guests": 2,
+          "wait_time": "~38 min",
+          "seated_since": 13.9,
+          "biometrics": {
+            "stress": 0.13,
+            "engagement": 0.92,
+            "patience": 0.91,
+            "movement": 0.07,
+            "heart_rate": 66
+          }
+        },
+        {
+          "id": 10,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 14.0,
+          "biometrics": {
+            "stress": 0.17,
+            "engagement": 0.89,
+            "patience": 0.9,
+            "movement": 0.13,
+            "heart_rate": 67
+          }
+        },
+        {
+          "id": 11,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 15.0,
+          "biometrics": {
+            "stress": 0.09,
+            "engagement": 0.91,
+            "patience": 0.96,
+            "movement": 0.09,
+            "heart_rate": 70
+          }
+        }
+      ],
+      "persons": [
+        {
+          "id": 2,
+          "status": "Standing",
+          "table_id": null
+        },
+        {
+          "id": 12,
+          "status": "Standing",
+          "table_id": null
+        },
+        {
+          "id": 18,
+          "status": "Seated",
+          "table_id": 6
+        },
+        {
+          "id": 23,
+          "status": "Standing",
+          "table_id": 8
+        },
+        {
+          "id": 25,
+          "status": "Standing",
+          "table_id": null
+        },
+        {
+          "id": 31,
+          "status": "Seated",
+          "table_id": 9
+        },
+        {
+          "id": 32,
+          "status": "Standing",
+          "table_id": 10
+        },
+        {
+          "id": 33,
+          "status": "Seated",
+          "table_id": 11
+        },
+        {
+          "id": 34,
+          "status": "Seated",
+          "table_id": 9
+        }
+      ]
+    },
+    {
+      "t": 16.0,
+      "vl_state": "JUST_SEATED",
+      "vl_confidence": 0.9,
+      "total_guests": 6,
+      "seated": 3,
+      "standing": 3,
+      "energy_level": "relaxed",
+      "service_activity": "minimal",
+      "body_language": "Most guests are leaning forward, indicating engagement.",
+      "behavioral_notes": "The scene shows a calm atmosphere with guests seated at tables, menus open, and no active eating. Waitstaff are not visible, suggesting minimal service activity. The guests seem to be waiting for their orders.",
+      "tables": [
+        {
+          "id": 2,
+          "state": "FINISHING",
+          "guests": 1,
+          "wait_time": "~8 min",
+          "seated_since": -7.9,
+          "biometrics": {
+            "stress": 0.24,
+            "engagement": 0.68,
+            "patience": 0.67,
+            "movement": 0.19,
+            "heart_rate": 70
+          }
+        },
+        {
+          "id": 4,
+          "state": "MID_MEAL",
+          "guests": 1,
+          "wait_time": "~18 min",
+          "seated_since": 5.3,
+          "biometrics": {
+            "stress": 0.2,
+            "engagement": 0.89,
+            "patience": 0.92,
+            "movement": 0.06,
+            "heart_rate": 67
+          }
+        },
+        {
+          "id": 6,
+          "state": "MID_MEAL",
+          "guests": 1,
+          "wait_time": "~18 min",
+          "seated_since": 5.7,
+          "biometrics": {
+            "stress": 0.2,
+            "engagement": 0.91,
+            "patience": 0.91,
+            "movement": 0.06,
+            "heart_rate": 73
+          }
+        },
+        {
+          "id": 8,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 12.0,
+          "biometrics": {
+            "stress": 0.17,
+            "engagement": 0.97,
+            "patience": 0.9,
+            "movement": 0.1,
+            "heart_rate": 67
+          }
+        },
+        {
+          "id": 9,
+          "state": "JUST_SEATED",
+          "guests": 2,
+          "wait_time": "~38 min",
+          "seated_since": 13.9,
+          "biometrics": {
+            "stress": 0.13,
+            "engagement": 0.92,
+            "patience": 0.91,
+            "movement": 0.07,
+            "heart_rate": 66
+          }
+        },
+        {
+          "id": 10,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 14.0,
+          "biometrics": {
+            "stress": 0.17,
+            "engagement": 0.89,
+            "patience": 0.9,
+            "movement": 0.13,
+            "heart_rate": 67
+          }
+        },
+        {
+          "id": 11,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 15.0,
+          "biometrics": {
+            "stress": 0.09,
+            "engagement": 0.91,
+            "patience": 0.96,
+            "movement": 0.09,
+            "heart_rate": 70
+          }
+        },
+        {
+          "id": 12,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 15.2,
+          "biometrics": {
+            "stress": 0.14,
+            "engagement": 0.96,
+            "patience": 0.99,
+            "movement": 0.04,
+            "heart_rate": 66
+          }
+        }
+      ],
+      "persons": [
+        {
+          "id": 2,
+          "status": "Standing",
+          "table_id": null
+        },
+        {
+          "id": 12,
+          "status": "Standing",
+          "table_id": null
+        },
+        {
+          "id": 18,
+          "status": "Seated",
+          "table_id": 6
+        },
+        {
+          "id": 23,
+          "status": "Seated",
+          "table_id": 8
+        },
+        {
+          "id": 31,
+          "status": "Standing",
+          "table_id": 9
+        },
+        {
+          "id": 35,
+          "status": "Seated",
+          "table_id": 12
+        }
+      ]
+    },
+    {
+      "t": 17.0,
+      "vl_state": "JUST_SEATED",
+      "vl_confidence": 0.9,
+      "total_guests": 7,
+      "seated": 4,
+      "standing": 3,
+      "energy_level": "relaxed",
+      "service_activity": "minimal",
+      "body_language": "Most guests are leaning forward, indicating engagement.",
+      "behavioral_notes": "The scene shows a calm atmosphere with guests seated at tables, menus open, and no active eating. Waitstaff are not visible, suggesting minimal service activity. The guests seem to be waiting for their orders.",
+      "tables": [
+        {
+          "id": 2,
+          "state": "FINISHING",
+          "guests": 1,
+          "wait_time": "~8 min",
+          "seated_since": -7.9,
+          "biometrics": {
+            "stress": 0.24,
+            "engagement": 0.68,
+            "patience": 0.67,
+            "movement": 0.19,
+            "heart_rate": 70
+          }
+        },
+        {
+          "id": 6,
+          "state": "MID_MEAL",
+          "guests": 1,
+          "wait_time": "~18 min",
+          "seated_since": 5.7,
+          "biometrics": {
+            "stress": 0.2,
+            "engagement": 0.91,
+            "patience": 0.91,
+            "movement": 0.06,
+            "heart_rate": 73
+          }
+        },
+        {
+          "id": 9,
+          "state": "JUST_SEATED",
+          "guests": 2,
+          "wait_time": "~38 min",
+          "seated_since": 13.9,
+          "biometrics": {
+            "stress": 0.13,
+            "engagement": 0.92,
+            "patience": 0.91,
+            "movement": 0.07,
+            "heart_rate": 66
+          }
+        },
+        {
+          "id": 10,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 14.0,
+          "biometrics": {
+            "stress": 0.17,
+            "engagement": 0.89,
+            "patience": 0.9,
+            "movement": 0.13,
+            "heart_rate": 67
+          }
+        },
+        {
+          "id": 11,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 15.0,
+          "biometrics": {
+            "stress": 0.09,
+            "engagement": 0.91,
+            "patience": 0.96,
+            "movement": 0.09,
+            "heart_rate": 70
+          }
+        },
+        {
+          "id": 12,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 15.2,
+          "biometrics": {
+            "stress": 0.14,
+            "engagement": 0.96,
+            "patience": 0.99,
+            "movement": 0.04,
+            "heart_rate": 66
+          }
+        },
+        {
+          "id": 13,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 16.4,
+          "biometrics": {
+            "stress": 0.1,
+            "engagement": 0.97,
+            "patience": 0.93,
+            "movement": 0.07,
+            "heart_rate": 69
+          }
+        },
+        {
+          "id": 14,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 16.7,
+          "biometrics": {
+            "stress": 0.1,
+            "engagement": 0.88,
+            "patience": 0.92,
+            "movement": 0.08,
+            "heart_rate": 71
+          }
+        }
+      ],
+      "persons": [
+        {
+          "id": 2,
+          "status": "Standing",
+          "table_id": null
+        },
+        {
+          "id": 12,
+          "status": "Standing",
+          "table_id": null
+        },
+        {
+          "id": 18,
+          "status": "Seated",
+          "table_id": 6
+        },
+        {
+          "id": 23,
+          "status": "Standing",
+          "table_id": 2
+        },
+        {
+          "id": 31,
+          "status": "Seated",
+          "table_id": 9
+        },
+        {
+          "id": 36,
+          "status": "Seated",
+          "table_id": 13
+        },
+        {
+          "id": 37,
+          "status": "Seated",
+          "table_id": 14
+        }
+      ]
+    },
+    {
+      "t": 18.0,
+      "vl_state": "JUST_SEATED",
+      "vl_confidence": 0.8,
+      "total_guests": 6,
+      "seated": 6,
+      "standing": 0,
+      "energy_level": "relaxed",
+      "service_activity": "active",
+      "body_language": "Most guests are leaning forward, indicating engagement.",
+      "behavioral_notes": "The scene shows a moderate level of activity as guests are seated and appear to be ordering or discussing their meals. The presence of menus suggests they are in the process of selecting their dishes.",
+      "tables": [
+        {
+          "id": 2,
+          "state": "FINISHING",
+          "guests": 1,
+          "wait_time": "~8 min",
+          "seated_since": -7.9,
+          "biometrics": {
+            "stress": 0.24,
+            "engagement": 0.58,
+            "patience": 0.67,
+            "movement": 0.29,
+            "heart_rate": 70
+          }
+        },
+        {
+          "id": 6,
+          "state": "MID_MEAL",
+          "guests": 1,
+          "wait_time": "~18 min",
+          "seated_since": 5.7,
+          "biometrics": {
+            "stress": 0.2,
+            "engagement": 0.81,
+            "patience": 0.91,
+            "movement": 0.16,
+            "heart_rate": 73
+          }
+        },
+        {
+          "id": 9,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 13.9,
+          "biometrics": {
+            "stress": 0.13,
+            "engagement": 0.82,
+            "patience": 0.91,
+            "movement": 0.17,
+            "heart_rate": 66
+          }
+        },
+        {
+          "id": 10,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 14.0,
+          "biometrics": {
+            "stress": 0.17,
+            "engagement": 0.79,
+            "patience": 0.9,
+            "movement": 0.23,
+            "heart_rate": 67
+          }
+        },
+        {
+          "id": 11,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 15.0,
+          "biometrics": {
+            "stress": 0.09,
+            "engagement": 0.81,
+            "patience": 0.96,
+            "movement": 0.19,
+            "heart_rate": 70
+          }
+        },
+        {
+          "id": 12,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 15.2,
+          "biometrics": {
+            "stress": 0.14,
+            "engagement": 0.86,
+            "patience": 0.99,
+            "movement": 0.14,
+            "heart_rate": 66
+          }
+        },
+        {
+          "id": 13,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 16.4,
+          "biometrics": {
+            "stress": 0.1,
+            "engagement": 0.87,
+            "patience": 0.93,
+            "movement": 0.17,
+            "heart_rate": 69
+          }
+        },
+        {
+          "id": 14,
+          "state": "JUST_SEATED",
+          "guests": 4,
+          "wait_time": "~45 min",
+          "seated_since": 16.7,
+          "biometrics": {
+            "stress": 0.1,
+            "engagement": 0.78,
+            "patience": 0.92,
+            "movement": 0.18,
+            "heart_rate": 71
+          }
+        }
+      ],
+      "persons": [
+        {
+          "id": 18,
+          "status": "Seated",
+          "table_id": 6
+        },
+        {
+          "id": 31,
+          "status": "Seated",
+          "table_id": 9
+        },
+        {
+          "id": 37,
+          "status": "Seated",
+          "table_id": 14
+        },
+        {
+          "id": 38,
+          "status": "Seated",
+          "table_id": 14
+        },
+        {
+          "id": 39,
+          "status": "Seated",
+          "table_id": 14
+        },
+        {
+          "id": 40,
+          "status": "Seated",
+          "table_id": 14
+        }
+      ]
+    },
+    {
+      "t": 19.0,
+      "vl_state": "JUST_SEATED",
+      "vl_confidence": 0.8,
+      "total_guests": 7,
+      "seated": 4,
+      "standing": 3,
+      "energy_level": "relaxed",
+      "service_activity": "active",
+      "body_language": "Most guests are leaning forward, indicating engagement.",
+      "behavioral_notes": "The scene shows a moderate level of activity as guests are seated and appear to be ordering or discussing their meals. The presence of menus suggests they are in the process of selecting their dishes.",
+      "tables": [
+        {
+          "id": 2,
+          "state": "FINISHING",
+          "guests": 1,
+          "wait_time": "~8 min",
+          "seated_since": -7.9,
+          "biometrics": {
+            "stress": 0.24,
+            "engagement": 0.58,
+            "patience": 0.67,
+            "movement": 0.29,
+            "heart_rate": 70
+          }
+        },
+        {
+          "id": 6,
+          "state": "MID_MEAL",
+          "guests": 1,
+          "wait_time": "~18 min",
+          "seated_since": 5.7,
+          "biometrics": {
+            "stress": 0.2,
+            "engagement": 0.81,
+            "patience": 0.91,
+            "movement": 0.16,
+            "heart_rate": 73
+          }
+        },
+        {
+          "id": 9,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 13.9,
+          "biometrics": {
+            "stress": 0.13,
+            "engagement": 0.82,
+            "patience": 0.91,
+            "movement": 0.17,
+            "heart_rate": 66
+          }
+        },
+        {
+          "id": 11,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 15.0,
+          "biometrics": {
+            "stress": 0.09,
+            "engagement": 0.81,
+            "patience": 0.96,
+            "movement": 0.19,
+            "heart_rate": 70
+          }
+        },
+        {
+          "id": 12,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 15.2,
+          "biometrics": {
+            "stress": 0.14,
+            "engagement": 0.86,
+            "patience": 0.99,
+            "movement": 0.14,
+            "heart_rate": 66
+          }
+        },
+        {
+          "id": 13,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 16.4,
+          "biometrics": {
+            "stress": 0.1,
+            "engagement": 0.87,
+            "patience": 0.93,
+            "movement": 0.17,
+            "heart_rate": 69
+          }
+        },
+        {
+          "id": 14,
+          "state": "JUST_SEATED",
+          "guests": 3,
+          "wait_time": "~45 min",
+          "seated_since": 16.7,
+          "biometrics": {
+            "stress": 0.1,
+            "engagement": 0.78,
+            "patience": 0.92,
+            "movement": 0.18,
+            "heart_rate": 71
+          }
+        },
+        {
+          "id": 15,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 18.7,
+          "biometrics": {
+            "stress": 0.11,
+            "engagement": 0.87,
+            "patience": 0.91,
+            "movement": 0.15,
+            "heart_rate": 68
+          }
+        }
+      ],
+      "persons": [
+        {
+          "id": 18,
+          "status": "Standing",
+          "table_id": 6
+        },
+        {
+          "id": 31,
+          "status": "Seated",
+          "table_id": 14
+        },
+        {
+          "id": 38,
+          "status": "Seated",
+          "table_id": 15
+        },
+        {
+          "id": 39,
+          "status": "Standing",
+          "table_id": null
+        },
+        {
+          "id": 40,
+          "status": "Seated",
+          "table_id": 14
+        },
+        {
+          "id": 41,
+          "status": "Standing",
+          "table_id": null
+        },
+        {
+          "id": 42,
+          "status": "Seated",
+          "table_id": 14
+        }
+      ]
+    },
+    {
+      "t": 20.0,
+      "vl_state": "JUST_SEATED",
+      "vl_confidence": 0.8,
+      "total_guests": 5,
+      "seated": 3,
+      "standing": 2,
+      "energy_level": "relaxed",
+      "service_activity": "active",
+      "body_language": "Most guests are leaning forward, indicating engagement.",
+      "behavioral_notes": "The scene shows a moderate level of activity as guests are seated and appear to be ordering or discussing their meals. The presence of menus suggests they are in the process of selecting their dishes.",
+      "tables": [
+        {
+          "id": 2,
+          "state": "FINISHING",
+          "guests": 1,
+          "wait_time": "~8 min",
+          "seated_since": -7.9,
+          "biometrics": {
+            "stress": 0.24,
+            "engagement": 0.58,
+            "patience": 0.67,
+            "movement": 0.29,
+            "heart_rate": 70
+          }
+        },
+        {
+          "id": 6,
+          "state": "MID_MEAL",
+          "guests": 1,
+          "wait_time": "~18 min",
+          "seated_since": 5.7,
+          "biometrics": {
+            "stress": 0.2,
+            "engagement": 0.81,
+            "patience": 0.91,
+            "movement": 0.16,
+            "heart_rate": 73
+          }
+        },
+        {
+          "id": 9,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 13.9,
+          "biometrics": {
+            "stress": 0.13,
+            "engagement": 0.82,
+            "patience": 0.91,
+            "movement": 0.17,
+            "heart_rate": 66
+          }
+        },
+        {
+          "id": 12,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 15.2,
+          "biometrics": {
+            "stress": 0.14,
+            "engagement": 0.86,
+            "patience": 0.99,
+            "movement": 0.14,
+            "heart_rate": 66
+          }
+        },
+        {
+          "id": 13,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 16.4,
+          "biometrics": {
+            "stress": 0.1,
+            "engagement": 0.87,
+            "patience": 0.93,
+            "movement": 0.17,
+            "heart_rate": 69
+          }
+        },
+        {
+          "id": 14,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 16.7,
+          "biometrics": {
+            "stress": 0.1,
+            "engagement": 0.78,
+            "patience": 0.92,
+            "movement": 0.18,
+            "heart_rate": 71
+          }
+        },
+        {
+          "id": 15,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 18.7,
+          "biometrics": {
+            "stress": 0.11,
+            "engagement": 0.87,
+            "patience": 0.91,
+            "movement": 0.15,
+            "heart_rate": 68
+          }
+        },
+        {
+          "id": 16,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 20.0,
+          "biometrics": {
+            "stress": 0.19,
+            "engagement": 0.8,
+            "patience": 0.89,
+            "movement": 0.18,
+            "heart_rate": 72
+          }
+        }
+      ],
+      "persons": [
+        {
+          "id": 18,
+          "status": "Seated",
+          "table_id": 6
+        },
+        {
+          "id": 38,
+          "status": "Seated",
+          "table_id": 15
+        },
+        {
+          "id": 42,
+          "status": "Standing",
+          "table_id": 14
+        },
+        {
+          "id": 44,
+          "status": "Seated",
+          "table_id": 16
+        },
+        {
+          "id": 45,
+          "status": "Standing",
+          "table_id": null
+        }
+      ]
+    },
+    {
+      "t": 21.0,
+      "vl_state": "JUST_SEATED",
+      "vl_confidence": 0.9,
+      "total_guests": 5,
+      "seated": 5,
+      "standing": 0,
+      "energy_level": "relaxed",
+      "service_activity": "minimal",
+      "body_language": "Most guests appear engaged, leaning forward slightly while looking at menus.",
+      "behavioral_notes": "The scene suggests a calm atmosphere with guests waiting for their orders. The waitstaff are present but not actively serving, indicating a slow start to the meal. Guests seem to be in a relaxed state, possibly discussing menu options.",
+      "tables": [
+        {
+          "id": 6,
+          "state": "MID_MEAL",
+          "guests": 1,
+          "wait_time": "~18 min",
+          "seated_since": 5.7,
+          "biometrics": {
+            "stress": 0.2,
+            "engagement": 0.81,
+            "patience": 0.81,
+            "movement": 0.16,
+            "heart_rate": 73
+          }
+        },
+        {
+          "id": 9,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 13.9,
+          "biometrics": {
+            "stress": 0.13,
+            "engagement": 0.82,
+            "patience": 0.81,
+            "movement": 0.17,
+            "heart_rate": 66
+          }
+        },
+        {
+          "id": 14,
+          "state": "JUST_SEATED",
+          "guests": 3,
+          "wait_time": "~45 min",
+          "seated_since": 16.7,
+          "biometrics": {
+            "stress": 0.1,
+            "engagement": 0.78,
+            "patience": 0.82,
+            "movement": 0.18,
+            "heart_rate": 71
+          }
+        },
+        {
+          "id": 15,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 18.7,
+          "biometrics": {
+            "stress": 0.11,
+            "engagement": 0.87,
+            "patience": 0.81,
+            "movement": 0.15,
+            "heart_rate": 68
+          }
+        },
+        {
+          "id": 16,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 20.0,
+          "biometrics": {
+            "stress": 0.19,
+            "engagement": 0.8,
+            "patience": 0.79,
+            "movement": 0.18,
+            "heart_rate": 72
+          }
+        }
+      ],
+      "persons": [
+        {
+          "id": 18,
+          "status": "Seated",
+          "table_id": 6
+        },
+        {
+          "id": 38,
+          "status": "Seated",
+          "table_id": 15
+        },
+        {
+          "id": 42,
+          "status": "Seated",
+          "table_id": 14
+        },
+        {
+          "id": 45,
+          "status": "Seated",
+          "table_id": 14
+        },
+        {
+          "id": 46,
+          "status": "Seated",
+          "table_id": 14
+        }
+      ]
+    },
+    {
+      "t": 22.0,
+      "vl_state": "JUST_SEATED",
+      "vl_confidence": 0.9,
+      "total_guests": 7,
+      "seated": 6,
+      "standing": 1,
+      "energy_level": "relaxed",
+      "service_activity": "minimal",
+      "body_language": "Most guests appear engaged, leaning forward slightly while looking at menus.",
+      "behavioral_notes": "The scene suggests a calm atmosphere with guests waiting for their orders. The waitstaff are present but not actively serving, indicating a slow start to the meal. Guests seem to be in a relaxed state, possibly discussing menu options.",
+      "tables": [
+        {
+          "id": 6,
+          "state": "MID_MEAL",
+          "guests": 1,
+          "wait_time": "~18 min",
+          "seated_since": 5.7,
+          "biometrics": {
+            "stress": 0.2,
+            "engagement": 0.81,
+            "patience": 0.81,
+            "movement": 0.16,
+            "heart_rate": 73
+          }
+        },
+        {
+          "id": 9,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 13.9,
+          "biometrics": {
+            "stress": 0.13,
+            "engagement": 0.82,
+            "patience": 0.81,
+            "movement": 0.17,
+            "heart_rate": 66
+          }
+        },
+        {
+          "id": 14,
+          "state": "JUST_SEATED",
+          "guests": 4,
+          "wait_time": "~45 min",
+          "seated_since": 16.7,
+          "biometrics": {
+            "stress": 0.1,
+            "engagement": 0.78,
+            "patience": 0.82,
+            "movement": 0.18,
+            "heart_rate": 71
+          }
+        },
+        {
+          "id": 15,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 18.7,
+          "biometrics": {
+            "stress": 0.11,
+            "engagement": 0.87,
+            "patience": 0.81,
+            "movement": 0.15,
+            "heart_rate": 68
+          }
+        },
+        {
+          "id": 16,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 20.0,
+          "biometrics": {
+            "stress": 0.19,
+            "engagement": 0.8,
+            "patience": 0.79,
+            "movement": 0.18,
+            "heart_rate": 72
+          }
+        }
+      ],
+      "persons": [
+        {
+          "id": 18,
+          "status": "Standing",
+          "table_id": null
+        },
+        {
+          "id": 38,
+          "status": "Seated",
+          "table_id": 15
+        },
+        {
+          "id": 42,
+          "status": "Seated",
+          "table_id": 14
+        },
+        {
+          "id": 45,
+          "status": "Seated",
+          "table_id": 14
+        },
+        {
+          "id": 46,
+          "status": "Seated",
+          "table_id": 14
+        },
+        {
+          "id": 47,
+          "status": "Seated",
+          "table_id": 14
+        },
+        {
+          "id": 48,
+          "status": "Seated",
+          "table_id": 6
+        }
+      ]
+    },
+    {
+      "t": 23.0,
+      "vl_state": "JUST_SEATED",
+      "vl_confidence": 0.9,
+      "total_guests": 5,
+      "seated": 5,
+      "standing": 0,
+      "energy_level": "relaxed",
+      "service_activity": "minimal",
+      "body_language": "Most guests appear engaged, leaning forward slightly while looking at menus.",
+      "behavioral_notes": "The scene suggests a calm atmosphere with guests waiting for their orders. The waitstaff are present but not actively serving, indicating a slow start to the meal. Guests seem to be in a relaxed state, possibly discussing menu options.",
+      "tables": [
+        {
+          "id": 6,
+          "state": "MID_MEAL",
+          "guests": 1,
+          "wait_time": "~18 min",
+          "seated_since": 5.7,
+          "biometrics": {
+            "stress": 0.2,
+            "engagement": 0.81,
+            "patience": 0.81,
+            "movement": 0.16,
+            "heart_rate": 73
+          }
+        },
+        {
+          "id": 14,
+          "state": "JUST_SEATED",
+          "guests": 3,
+          "wait_time": "~45 min",
+          "seated_since": 16.7,
+          "biometrics": {
+            "stress": 0.1,
+            "engagement": 0.78,
+            "patience": 0.82,
+            "movement": 0.18,
+            "heart_rate": 71
+          }
+        },
+        {
+          "id": 15,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 18.7,
+          "biometrics": {
+            "stress": 0.11,
+            "engagement": 0.87,
+            "patience": 0.81,
+            "movement": 0.15,
+            "heart_rate": 68
+          }
+        },
+        {
+          "id": 16,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 20.0,
+          "biometrics": {
+            "stress": 0.19,
+            "engagement": 0.8,
+            "patience": 0.79,
+            "movement": 0.18,
+            "heart_rate": 72
+          }
+        },
+        {
+          "id": 17,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 22.7,
+          "biometrics": {
+            "stress": 0.16,
+            "engagement": 0.82,
+            "patience": 0.88,
+            "movement": 0.24,
+            "heart_rate": 72
+          }
+        }
+      ],
+      "persons": [
+        {
+          "id": 18,
+          "status": "Seated",
+          "table_id": 6
+        },
+        {
+          "id": 38,
+          "status": "Seated",
+          "table_id": 15
+        },
+        {
+          "id": 45,
+          "status": "Seated",
+          "table_id": 14
+        },
+        {
+          "id": 46,
+          "status": "Seated",
+          "table_id": 17
+        },
+        {
+          "id": 47,
+          "status": "Seated",
+          "table_id": 14
+        }
+      ]
+    },
+    {
+      "t": 24.0,
+      "vl_state": "JUST_SEATED",
+      "vl_confidence": 0.9,
+      "total_guests": 5,
+      "seated": 5,
+      "standing": 0,
+      "energy_level": "relaxed",
+      "service_activity": "active",
+      "body_language": "Most guests are leaning forward, indicating engagement with the meal or menu.",
+      "behavioral_notes": "The restaurant appears moderately busy with guests seated and engaged in conversation. Waitstaff are visible, suggesting active service. The atmosphere seems calm and relaxed as guests are not in a hurry.",
+      "tables": [
+        {
+          "id": 6,
+          "state": "MID_MEAL",
+          "guests": 1,
+          "wait_time": "~18 min",
+          "seated_since": 5.7,
+          "biometrics": {
+            "stress": 0.2,
+            "engagement": 0.91,
+            "patience": 0.91,
+            "movement": 0.16,
+            "heart_rate": 73
+          }
+        },
+        {
+          "id": 14,
+          "state": "MID_MEAL",
+          "guests": 3,
+          "wait_time": "~22 min",
+          "seated_since": 16.7,
+          "biometrics": {
+            "stress": 0.1,
+            "engagement": 0.81,
+            "patience": 0.89,
+            "movement": 0.18,
+            "heart_rate": 71
+          }
+        },
+        {
+          "id": 15,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 18.7,
+          "biometrics": {
+            "stress": 0.11,
+            "engagement": 0.97,
+            "patience": 0.91,
+            "movement": 0.15,
+            "heart_rate": 68
+          }
+        },
+        {
+          "id": 16,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 20.0,
+          "biometrics": {
+            "stress": 0.19,
+            "engagement": 0.9,
+            "patience": 0.89,
+            "movement": 0.18,
+            "heart_rate": 72
+          }
+        },
+        {
+          "id": 17,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 22.7,
+          "biometrics": {
+            "stress": 0.16,
+            "engagement": 0.92,
+            "patience": 0.98,
+            "movement": 0.24,
+            "heart_rate": 72
+          }
+        }
+      ],
+      "persons": [
+        {
+          "id": 18,
+          "status": "Seated",
+          "table_id": 6
+        },
+        {
+          "id": 38,
+          "status": "Seated",
+          "table_id": 15
+        },
+        {
+          "id": 45,
+          "status": "Seated",
+          "table_id": 14
+        },
+        {
+          "id": 46,
+          "status": "Seated",
+          "table_id": 17
+        },
+        {
+          "id": 47,
+          "status": "Seated",
+          "table_id": 14
+        }
+      ]
+    },
+    {
+      "t": 25.0,
+      "vl_state": "JUST_SEATED",
+      "vl_confidence": 0.9,
+      "total_guests": 6,
+      "seated": 6,
+      "standing": 0,
+      "energy_level": "relaxed",
+      "service_activity": "active",
+      "body_language": "Most guests are leaning forward, indicating engagement with the meal or menu.",
+      "behavioral_notes": "The restaurant appears moderately busy with guests seated and engaged in conversation. Waitstaff are visible, suggesting active service. The atmosphere seems calm and relaxed as guests are not in a hurry.",
+      "tables": [
+        {
+          "id": 6,
+          "state": "MID_MEAL",
+          "guests": 1,
+          "wait_time": "~18 min",
+          "seated_since": 5.7,
+          "biometrics": {
+            "stress": 0.2,
+            "engagement": 0.91,
+            "patience": 0.91,
+            "movement": 0.16,
+            "heart_rate": 73
+          }
+        },
+        {
+          "id": 14,
+          "state": "MID_MEAL",
+          "guests": 4,
+          "wait_time": "~22 min",
+          "seated_since": 16.7,
+          "biometrics": {
+            "stress": 0.1,
+            "engagement": 0.81,
+            "patience": 0.89,
+            "movement": 0.18,
+            "heart_rate": 71
+          }
+        },
+        {
+          "id": 15,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 18.7,
+          "biometrics": {
+            "stress": 0.11,
+            "engagement": 0.97,
+            "patience": 0.91,
+            "movement": 0.15,
+            "heart_rate": 68
+          }
+        },
+        {
+          "id": 17,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 22.7,
+          "biometrics": {
+            "stress": 0.16,
+            "engagement": 0.92,
+            "patience": 0.98,
+            "movement": 0.24,
+            "heart_rate": 72
+          }
+        },
+        {
+          "id": 18,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 24.9,
+          "biometrics": {
+            "stress": 0.13,
+            "engagement": 0.9,
+            "patience": 0.97,
+            "movement": 0.24,
+            "heart_rate": 69
+          }
+        }
+      ],
+      "persons": [
+        {
+          "id": 18,
+          "status": "Seated",
+          "table_id": 6
+        },
+        {
+          "id": 38,
+          "status": "Seated",
+          "table_id": 15
+        },
+        {
+          "id": 45,
+          "status": "Seated",
+          "table_id": 14
+        },
+        {
+          "id": 46,
+          "status": "Seated",
+          "table_id": 17
+        },
+        {
+          "id": 47,
+          "status": "Seated",
+          "table_id": 14
+        },
+        {
+          "id": 49,
+          "status": "Seated",
+          "table_id": 18
+        }
+      ]
+    },
+    {
+      "t": 26.0,
+      "vl_state": "JUST_SEATED",
+      "vl_confidence": 0.9,
+      "total_guests": 6,
+      "seated": 4,
+      "standing": 2,
+      "energy_level": "relaxed",
+      "service_activity": "active",
+      "body_language": "Most guests are leaning forward, indicating engagement with the meal or menu.",
+      "behavioral_notes": "The restaurant appears moderately busy with guests seated and engaged in conversation. Waitstaff are visible, suggesting active service. The atmosphere seems calm and relaxed as guests are not in a hurry.",
+      "tables": [
+        {
+          "id": 6,
+          "state": "FINISHING",
+          "guests": 1,
+          "wait_time": "~8 min",
+          "seated_since": 5.7,
+          "biometrics": {
+            "stress": 0.33,
+            "engagement": 0.76,
+            "patience": 0.71,
+            "movement": 0.28,
+            "heart_rate": 73
+          }
+        },
+        {
+          "id": 14,
+          "state": "MID_MEAL",
+          "guests": 2,
+          "wait_time": "~18 min",
+          "seated_since": 16.7,
+          "biometrics": {
+            "stress": 0.1,
+            "engagement": 0.81,
+            "patience": 0.89,
+            "movement": 0.18,
+            "heart_rate": 71
+          }
+        },
+        {
+          "id": 15,
+          "state": "MID_MEAL",
+          "guests": 1,
+          "wait_time": "~18 min",
+          "seated_since": 18.7,
+          "biometrics": {
+            "stress": 0.11,
+            "engagement": 0.9,
+            "patience": 0.88,
+            "movement": 0.15,
+            "heart_rate": 68
+          }
+        },
+        {
+          "id": 17,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 22.7,
+          "biometrics": {
+            "stress": 0.16,
+            "engagement": 0.92,
+            "patience": 0.98,
+            "movement": 0.24,
+            "heart_rate": 72
+          }
+        },
+        {
+          "id": 18,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 24.9,
+          "biometrics": {
+            "stress": 0.13,
+            "engagement": 0.9,
+            "patience": 0.97,
+            "movement": 0.24,
+            "heart_rate": 69
+          }
+        }
+      ],
+      "persons": [
+        {
+          "id": 18,
+          "status": "Seated",
+          "table_id": 6
+        },
+        {
+          "id": 38,
+          "status": "Seated",
+          "table_id": 15
+        },
+        {
+          "id": 45,
+          "status": "Seated",
+          "table_id": 14
+        },
+        {
+          "id": 46,
+          "status": "Standing",
+          "table_id": 17
+        },
+        {
+          "id": 47,
+          "status": "Seated",
+          "table_id": 14
+        },
+        {
+          "id": 50,
+          "status": "Standing",
+          "table_id": null
+        }
+      ]
+    },
+    {
+      "t": 27.0,
+      "vl_state": "JUST_SEATED",
+      "vl_confidence": 0.9,
+      "total_guests": 5,
+      "seated": 4,
+      "standing": 1,
+      "energy_level": "relaxed",
+      "service_activity": "minimal",
+      "body_language": "Most guests are leaning forward, engaged in conversation.",
+      "behavioral_notes": "The scene shows a calm atmosphere with guests seated at tables, menus open, and some individuals leaning forward as if engaged in conversation. The presence of menus suggests they are waiting for service, indicating a relaxed energy level.",
+      "tables": [
+        {
+          "id": 6,
+          "state": "FINISHING",
+          "guests": 1,
+          "wait_time": "~8 min",
+          "seated_since": 5.7,
+          "biometrics": {
+            "stress": 0.33,
+            "engagement": 0.66,
+            "patience": 0.61,
+            "movement": 0.28,
+            "heart_rate": 73
+          }
+        },
+        {
+          "id": 14,
+          "state": "MID_MEAL",
+          "guests": 2,
+          "wait_time": "~18 min",
+          "seated_since": 16.7,
+          "biometrics": {
+            "stress": 0.1,
+            "engagement": 0.71,
+            "patience": 0.79,
+            "movement": 0.18,
+            "heart_rate": 71
+          }
+        },
+        {
+          "id": 15,
+          "state": "MID_MEAL",
+          "guests": 1,
+          "wait_time": "~18 min",
+          "seated_since": 18.7,
+          "biometrics": {
+            "stress": 0.11,
+            "engagement": 0.8,
+            "patience": 0.78,
+            "movement": 0.15,
+            "heart_rate": 68
+          }
+        },
+        {
+          "id": 18,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 24.9,
+          "biometrics": {
+            "stress": 0.13,
+            "engagement": 0.8,
+            "patience": 0.87,
+            "movement": 0.24,
+            "heart_rate": 69
+          }
+        }
+      ],
+      "persons": [
+        {
+          "id": 18,
+          "status": "Seated",
+          "table_id": 6
+        },
+        {
+          "id": 38,
+          "status": "Seated",
+          "table_id": 15
+        },
+        {
+          "id": 45,
+          "status": "Seated",
+          "table_id": 14
+        },
+        {
+          "id": 47,
+          "status": "Seated",
+          "table_id": 14
+        },
+        {
+          "id": 50,
+          "status": "Standing",
+          "table_id": null
+        }
+      ]
+    },
+    {
+      "t": 28.0,
+      "vl_state": "JUST_SEATED",
+      "vl_confidence": 0.9,
+      "total_guests": 6,
+      "seated": 4,
+      "standing": 2,
+      "energy_level": "relaxed",
+      "service_activity": "minimal",
+      "body_language": "Most guests are leaning forward, engaged in conversation.",
+      "behavioral_notes": "The scene shows a calm atmosphere with guests seated at tables, menus open, and some individuals leaning forward as if engaged in conversation. The presence of menus suggests they are waiting for service, indicating a relaxed energy level.",
+      "tables": [
+        {
+          "id": 6,
+          "state": "FINISHING",
+          "guests": 1,
+          "wait_time": "~8 min",
+          "seated_since": 5.7,
+          "biometrics": {
+            "stress": 0.33,
+            "engagement": 0.66,
+            "patience": 0.61,
+            "movement": 0.28,
+            "heart_rate": 73
+          }
+        },
+        {
+          "id": 14,
+          "state": "MID_MEAL",
+          "guests": 3,
+          "wait_time": "~22 min",
+          "seated_since": 16.7,
+          "biometrics": {
+            "stress": 0.1,
+            "engagement": 0.71,
+            "patience": 0.79,
+            "movement": 0.18,
+            "heart_rate": 71
+          }
+        },
+        {
+          "id": 15,
+          "state": "MID_MEAL",
+          "guests": 1,
+          "wait_time": "~18 min",
+          "seated_since": 18.7,
+          "biometrics": {
+            "stress": 0.11,
+            "engagement": 0.8,
+            "patience": 0.78,
+            "movement": 0.15,
+            "heart_rate": 68
+          }
+        },
+        {
+          "id": 18,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 24.9,
+          "biometrics": {
+            "stress": 0.13,
+            "engagement": 0.8,
+            "patience": 0.87,
+            "movement": 0.24,
+            "heart_rate": 69
+          }
+        }
+      ],
+      "persons": [
+        {
+          "id": 18,
+          "status": "Standing",
+          "table_id": 6
+        },
+        {
+          "id": 38,
+          "status": "Seated",
+          "table_id": 15
+        },
+        {
+          "id": 45,
+          "status": "Seated",
+          "table_id": 14
+        },
+        {
+          "id": 47,
+          "status": "Standing",
+          "table_id": null
+        },
+        {
+          "id": 50,
+          "status": "Seated",
+          "table_id": 14
+        },
+        {
+          "id": 51,
+          "status": "Seated",
+          "table_id": 14
+        }
+      ]
+    },
+    {
+      "t": 29.0,
+      "vl_state": "JUST_SEATED",
+      "vl_confidence": 0.9,
+      "total_guests": 7,
+      "seated": 5,
+      "standing": 2,
+      "energy_level": "relaxed",
+      "service_activity": "minimal",
+      "body_language": "Most guests are leaning forward, engaged in conversation.",
+      "behavioral_notes": "The scene shows a calm atmosphere with guests seated at tables, menus open, and some individuals leaning forward as if engaged in conversation. The presence of menus suggests they are waiting for service, indicating a relaxed energy level.",
+      "tables": [
+        {
+          "id": 6,
+          "state": "FINISHING",
+          "guests": 1,
+          "wait_time": "~8 min",
+          "seated_since": 5.7,
+          "biometrics": {
+            "stress": 0.33,
+            "engagement": 0.66,
+            "patience": 0.61,
+            "movement": 0.28,
+            "heart_rate": 73
+          }
+        },
+        {
+          "id": 14,
+          "state": "MID_MEAL",
+          "guests": 4,
+          "wait_time": "~22 min",
+          "seated_since": 16.7,
+          "biometrics": {
+            "stress": 0.1,
+            "engagement": 0.71,
+            "patience": 0.79,
+            "movement": 0.18,
+            "heart_rate": 71
+          }
+        },
+        {
+          "id": 15,
+          "state": "MID_MEAL",
+          "guests": 1,
+          "wait_time": "~18 min",
+          "seated_since": 18.7,
+          "biometrics": {
+            "stress": 0.11,
+            "engagement": 0.8,
+            "patience": 0.78,
+            "movement": 0.15,
+            "heart_rate": 68
+          }
+        },
+        {
+          "id": 18,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 24.9,
+          "biometrics": {
+            "stress": 0.13,
+            "engagement": 0.8,
+            "patience": 0.87,
+            "movement": 0.24,
+            "heart_rate": 69
+          }
+        },
+        {
+          "id": 19,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 28.7,
+          "biometrics": {
+            "stress": 0.19,
+            "engagement": 0.85,
+            "patience": 0.86,
+            "movement": 0.24,
+            "heart_rate": 73
+          }
+        }
+      ],
+      "persons": [
+        {
+          "id": 18,
+          "status": "Seated",
+          "table_id": 6
+        },
+        {
+          "id": 38,
+          "status": "Seated",
+          "table_id": 15
+        },
+        {
+          "id": 45,
+          "status": "Standing",
+          "table_id": null
+        },
+        {
+          "id": 47,
+          "status": "Seated",
+          "table_id": 14
+        },
+        {
+          "id": 51,
+          "status": "Standing",
+          "table_id": 19
+        },
+        {
+          "id": 52,
+          "status": "Seated",
+          "table_id": 14
+        },
+        {
+          "id": 53,
+          "status": "Seated",
+          "table_id": 14
+        }
+      ]
+    },
+    {
+      "t": 30.0,
+      "vl_state": "JUST_SEATED",
+      "vl_confidence": 0.9,
+      "total_guests": 5,
+      "seated": 4,
+      "standing": 1,
+      "energy_level": "relaxed",
+      "service_activity": "active",
+      "body_language": "Most guests are leaning forward, indicating engagement.",
+      "behavioral_notes": "The restaurant appears moderately busy with guests seated and engaged in conversation. Waitstaff are visible and seem to be attending to the guests. The atmosphere suggests a calm and relaxed dining experience.",
+      "tables": [
+        {
+          "id": 6,
+          "state": "FINISHING",
+          "guests": 1,
+          "wait_time": "~8 min",
+          "seated_since": 5.7,
+          "biometrics": {
+            "stress": 0.33,
+            "engagement": 0.76,
+            "patience": 0.71,
+            "movement": 0.28,
+            "heart_rate": 73
+          }
+        },
+        {
+          "id": 14,
+          "state": "MID_MEAL",
+          "guests": 1,
+          "wait_time": "~18 min",
+          "seated_since": 16.7,
+          "biometrics": {
+            "stress": 0.1,
+            "engagement": 0.81,
+            "patience": 0.89,
+            "movement": 0.18,
+            "heart_rate": 71
+          }
+        },
+        {
+          "id": 15,
+          "state": "MID_MEAL",
+          "guests": 1,
+          "wait_time": "~18 min",
+          "seated_since": 18.7,
+          "biometrics": {
+            "stress": 0.11,
+            "engagement": 0.9,
+            "patience": 0.88,
+            "movement": 0.15,
+            "heart_rate": 68
+          }
+        },
+        {
+          "id": 19,
+          "state": "JUST_SEATED",
+          "guests": 2,
+          "wait_time": "~38 min",
+          "seated_since": 28.7,
+          "biometrics": {
+            "stress": 0.19,
+            "engagement": 0.95,
+            "patience": 0.96,
+            "movement": 0.24,
+            "heart_rate": 73
+          }
+        },
+        {
+          "id": 20,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 29.1,
+          "biometrics": {
+            "stress": 0.17,
+            "engagement": 0.92,
+            "patience": 0.97,
+            "movement": 0.16,
+            "heart_rate": 67
+          }
+        }
+      ],
+      "persons": [
+        {
+          "id": 18,
+          "status": "Seated",
+          "table_id": 6
+        },
+        {
+          "id": 38,
+          "status": "Seated",
+          "table_id": 15
+        },
+        {
+          "id": 45,
+          "status": "Seated",
+          "table_id": 19
+        },
+        {
+          "id": 51,
+          "status": "Seated",
+          "table_id": 19
+        },
+        {
+          "id": 53,
+          "status": "Standing",
+          "table_id": 20
+        }
+      ]
+    },
+    {
+      "t": 31.0,
+      "vl_state": "JUST_SEATED",
+      "vl_confidence": 0.9,
+      "total_guests": 5,
+      "seated": 4,
+      "standing": 1,
+      "energy_level": "relaxed",
+      "service_activity": "active",
+      "body_language": "Most guests are leaning forward, indicating engagement.",
+      "behavioral_notes": "The restaurant appears moderately busy with guests seated and engaged in conversation. Waitstaff are visible and seem to be attending to the guests. The atmosphere suggests a calm and relaxed dining experience.",
+      "tables": [
+        {
+          "id": 6,
+          "state": "FINISHING",
+          "guests": 1,
+          "wait_time": "~8 min",
+          "seated_since": 5.7,
+          "biometrics": {
+            "stress": 0.33,
+            "engagement": 0.76,
+            "patience": 0.71,
+            "movement": 0.28,
+            "heart_rate": 73
+          }
+        },
+        {
+          "id": 14,
+          "state": "MID_MEAL",
+          "guests": 1,
+          "wait_time": "~18 min",
+          "seated_since": 16.7,
+          "biometrics": {
+            "stress": 0.1,
+            "engagement": 0.81,
+            "patience": 0.89,
+            "movement": 0.18,
+            "heart_rate": 71
+          }
+        },
+        {
+          "id": 15,
+          "state": "MID_MEAL",
+          "guests": 1,
+          "wait_time": "~18 min",
+          "seated_since": 18.7,
+          "biometrics": {
+            "stress": 0.11,
+            "engagement": 0.9,
+            "patience": 0.88,
+            "movement": 0.15,
+            "heart_rate": 68
+          }
+        },
+        {
+          "id": 19,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 28.7,
+          "biometrics": {
+            "stress": 0.19,
+            "engagement": 0.95,
+            "patience": 0.96,
+            "movement": 0.24,
+            "heart_rate": 73
+          }
+        },
+        {
+          "id": 20,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 29.1,
+          "biometrics": {
+            "stress": 0.17,
+            "engagement": 0.92,
+            "patience": 0.97,
+            "movement": 0.16,
+            "heart_rate": 67
+          }
+        },
+        {
+          "id": 21,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 30.6,
+          "biometrics": {
+            "stress": 0.14,
+            "engagement": 0.95,
+            "patience": 0.99,
+            "movement": 0.15,
+            "heart_rate": 68
+          }
+        }
+      ],
+      "persons": [
+        {
+          "id": 18,
+          "status": "Seated",
+          "table_id": 6
+        },
+        {
+          "id": 38,
+          "status": "Seated",
+          "table_id": 15
+        },
+        {
+          "id": 45,
+          "status": "Seated",
+          "table_id": 19
+        },
+        {
+          "id": 51,
+          "status": "Seated",
+          "table_id": 21
+        },
+        {
+          "id": 53,
+          "status": "Standing",
+          "table_id": 20
+        }
+      ]
+    },
+    {
+      "t": 32.0,
+      "vl_state": "JUST_SEATED",
+      "vl_confidence": 0.9,
+      "total_guests": 6,
+      "seated": 5,
+      "standing": 1,
+      "energy_level": "relaxed",
+      "service_activity": "active",
+      "body_language": "Most guests are leaning forward, indicating engagement.",
+      "behavioral_notes": "The restaurant appears moderately busy with guests seated and engaged in conversation. Waitstaff are visible and seem to be attending to the guests. The atmosphere suggests a calm and relaxed dining experience.",
+      "tables": [
+        {
+          "id": 6,
+          "state": "FINISHING",
+          "guests": 1,
+          "wait_time": "~8 min",
+          "seated_since": 5.7,
+          "biometrics": {
+            "stress": 0.33,
+            "engagement": 0.76,
+            "patience": 0.71,
+            "movement": 0.28,
+            "heart_rate": 73
+          }
+        },
+        {
+          "id": 14,
+          "state": "MID_MEAL",
+          "guests": 1,
+          "wait_time": "~18 min",
+          "seated_since": 16.7,
+          "biometrics": {
+            "stress": 0.1,
+            "engagement": 0.81,
+            "patience": 0.89,
+            "movement": 0.18,
+            "heart_rate": 71
+          }
+        },
+        {
+          "id": 15,
+          "state": "MID_MEAL",
+          "guests": 1,
+          "wait_time": "~18 min",
+          "seated_since": 18.7,
+          "biometrics": {
+            "stress": 0.11,
+            "engagement": 0.9,
+            "patience": 0.88,
+            "movement": 0.15,
+            "heart_rate": 68
+          }
+        },
+        {
+          "id": 19,
+          "state": "JUST_SEATED",
+          "guests": 2,
+          "wait_time": "~38 min",
+          "seated_since": 28.7,
+          "biometrics": {
+            "stress": 0.19,
+            "engagement": 0.95,
+            "patience": 0.96,
+            "movement": 0.24,
+            "heart_rate": 73
+          }
+        },
+        {
+          "id": 20,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 29.1,
+          "biometrics": {
+            "stress": 0.17,
+            "engagement": 0.92,
+            "patience": 0.97,
+            "movement": 0.16,
+            "heart_rate": 67
+          }
+        },
+        {
+          "id": 21,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 30.6,
+          "biometrics": {
+            "stress": 0.14,
+            "engagement": 0.95,
+            "patience": 0.99,
+            "movement": 0.15,
+            "heart_rate": 68
+          }
+        },
+        {
+          "id": 22,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 31.5,
+          "biometrics": {
+            "stress": 0.1,
+            "engagement": 0.93,
+            "patience": 0.98,
+            "movement": 0.15,
+            "heart_rate": 72
+          }
+        }
+      ],
+      "persons": [
+        {
+          "id": 38,
+          "status": "Seated",
+          "table_id": 15
+        },
+        {
+          "id": 45,
+          "status": "Seated",
+          "table_id": 19
+        },
+        {
+          "id": 51,
+          "status": "Standing",
+          "table_id": null
+        },
+        {
+          "id": 53,
+          "status": "Seated",
+          "table_id": 20
+        },
+        {
+          "id": 55,
+          "status": "Seated",
+          "table_id": 21
+        },
+        {
+          "id": 56,
+          "status": "Seated",
+          "table_id": 22
+        }
+      ]
+    },
+    {
+      "t": 33.0,
+      "vl_state": "JUST_SEATED",
+      "vl_confidence": 0.9,
+      "total_guests": 4,
+      "seated": 4,
+      "standing": 0,
+      "energy_level": "relaxed",
+      "service_activity": "active",
+      "body_language": "Most guests are leaning forward, indicating engagement.",
+      "behavioral_notes": "The scene shows a moderate level of activity with guests seated and engaged in conversation. Waitstaff are visible, suggesting active service. The environment appears calm and relaxed, with guests appearing content and attentive.",
+      "tables": [
+        {
+          "id": 6,
+          "state": "FINISHING",
+          "guests": 1,
+          "wait_time": "~8 min",
+          "seated_since": 5.7,
+          "biometrics": {
+            "stress": 0.33,
+            "engagement": 0.76,
+            "patience": 0.71,
+            "movement": 0.28,
+            "heart_rate": 73
+          }
+        },
+        {
+          "id": 14,
+          "state": "MID_MEAL",
+          "guests": 1,
+          "wait_time": "~18 min",
+          "seated_since": 16.7,
+          "biometrics": {
+            "stress": 0.1,
+            "engagement": 0.81,
+            "patience": 0.89,
+            "movement": 0.18,
+            "heart_rate": 71
+          }
+        },
+        {
+          "id": 19,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 28.7,
+          "biometrics": {
+            "stress": 0.19,
+            "engagement": 0.95,
+            "patience": 0.96,
+            "movement": 0.24,
+            "heart_rate": 73
+          }
+        },
+        {
+          "id": 20,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 29.1,
+          "biometrics": {
+            "stress": 0.17,
+            "engagement": 0.92,
+            "patience": 0.97,
+            "movement": 0.16,
+            "heart_rate": 67
+          }
+        },
+        {
+          "id": 21,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 30.6,
+          "biometrics": {
+            "stress": 0.14,
+            "engagement": 0.95,
+            "patience": 0.99,
+            "movement": 0.15,
+            "heart_rate": 68
+          }
+        },
+        {
+          "id": 22,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 31.5,
+          "biometrics": {
+            "stress": 0.1,
+            "engagement": 0.93,
+            "patience": 0.98,
+            "movement": 0.15,
+            "heart_rate": 72
+          }
+        },
+        {
+          "id": 23,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 32.8,
+          "biometrics": {
+            "stress": 0.1,
+            "engagement": 0.98,
+            "patience": 0.94,
+            "movement": 0.24,
+            "heart_rate": 74
+          }
+        }
+      ],
+      "persons": [
+        {
+          "id": 38,
+          "status": "Seated",
+          "table_id": 14
+        },
+        {
+          "id": 45,
+          "status": "Seated",
+          "table_id": 19
+        },
+        {
+          "id": 51,
+          "status": "Seated",
+          "table_id": 21
+        },
+        {
+          "id": 58,
+          "status": "Seated",
+          "table_id": 23
+        }
+      ]
+    },
+    {
+      "t": 34.0,
+      "vl_state": "JUST_SEATED",
+      "vl_confidence": 0.9,
+      "total_guests": 4,
+      "seated": 4,
+      "standing": 0,
+      "energy_level": "relaxed",
+      "service_activity": "active",
+      "body_language": "Most guests are leaning forward, indicating engagement.",
+      "behavioral_notes": "The scene shows a moderate level of activity with guests seated and engaged in conversation. Waitstaff are visible, suggesting active service. The environment appears calm and relaxed, with guests appearing content and attentive.",
+      "tables": [
+        {
+          "id": 6,
+          "state": "FINISHING",
+          "guests": 1,
+          "wait_time": "~8 min",
+          "seated_since": 5.7,
+          "biometrics": {
+            "stress": 0.33,
+            "engagement": 0.76,
+            "patience": 0.71,
+            "movement": 0.28,
+            "heart_rate": 73
+          }
+        },
+        {
+          "id": 14,
+          "state": "MID_MEAL",
+          "guests": 1,
+          "wait_time": "~18 min",
+          "seated_since": 16.7,
+          "biometrics": {
+            "stress": 0.1,
+            "engagement": 0.81,
+            "patience": 0.89,
+            "movement": 0.18,
+            "heart_rate": 71
+          }
+        },
+        {
+          "id": 19,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 28.7,
+          "biometrics": {
+            "stress": 0.19,
+            "engagement": 0.95,
+            "patience": 0.96,
+            "movement": 0.24,
+            "heart_rate": 73
+          }
+        },
+        {
+          "id": 21,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 30.6,
+          "biometrics": {
+            "stress": 0.14,
+            "engagement": 0.95,
+            "patience": 0.99,
+            "movement": 0.15,
+            "heart_rate": 68
+          }
+        },
+        {
+          "id": 22,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 31.5,
+          "biometrics": {
+            "stress": 0.1,
+            "engagement": 0.93,
+            "patience": 0.98,
+            "movement": 0.15,
+            "heart_rate": 72
+          }
+        },
+        {
+          "id": 23,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 32.8,
+          "biometrics": {
+            "stress": 0.1,
+            "engagement": 0.98,
+            "patience": 0.94,
+            "movement": 0.24,
+            "heart_rate": 74
+          }
+        }
+      ],
+      "persons": [
+        {
+          "id": 38,
+          "status": "Seated",
+          "table_id": 14
+        },
+        {
+          "id": 45,
+          "status": "Seated",
+          "table_id": 19
+        },
+        {
+          "id": 51,
+          "status": "Seated",
+          "table_id": 21
+        },
+        {
+          "id": 58,
+          "status": "Seated",
+          "table_id": 23
+        }
+      ]
+    },
+    {
+      "t": 35.0,
+      "vl_state": "JUST_SEATED",
+      "vl_confidence": 0.9,
+      "total_guests": 4,
+      "seated": 4,
+      "standing": 0,
+      "energy_level": "relaxed",
+      "service_activity": "active",
+      "body_language": "Most guests are leaning forward, indicating engagement.",
+      "behavioral_notes": "The scene shows a moderate level of activity with guests seated and engaged in conversation. Waitstaff are visible, suggesting active service. The environment appears calm and relaxed, with guests appearing content and attentive.",
+      "tables": [
+        {
+          "id": 6,
+          "state": "FINISHING",
+          "guests": 1,
+          "wait_time": "~8 min",
+          "seated_since": 5.7,
+          "biometrics": {
+            "stress": 0.33,
+            "engagement": 0.76,
+            "patience": 0.71,
+            "movement": 0.28,
+            "heart_rate": 73
+          }
+        },
+        {
+          "id": 14,
+          "state": "MID_MEAL",
+          "guests": 1,
+          "wait_time": "~18 min",
+          "seated_since": 16.7,
+          "biometrics": {
+            "stress": 0.1,
+            "engagement": 0.81,
+            "patience": 0.89,
+            "movement": 0.18,
+            "heart_rate": 71
+          }
+        },
+        {
+          "id": 19,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 28.7,
+          "biometrics": {
+            "stress": 0.19,
+            "engagement": 0.95,
+            "patience": 0.96,
+            "movement": 0.24,
+            "heart_rate": 73
+          }
+        },
+        {
+          "id": 21,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 30.6,
+          "biometrics": {
+            "stress": 0.14,
+            "engagement": 0.95,
+            "patience": 0.99,
+            "movement": 0.15,
+            "heart_rate": 68
+          }
+        },
+        {
+          "id": 22,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 31.5,
+          "biometrics": {
+            "stress": 0.1,
+            "engagement": 0.93,
+            "patience": 0.98,
+            "movement": 0.15,
+            "heart_rate": 72
+          }
+        },
+        {
+          "id": 23,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 32.8,
+          "biometrics": {
+            "stress": 0.1,
+            "engagement": 0.98,
+            "patience": 0.94,
+            "movement": 0.24,
+            "heart_rate": 74
+          }
+        }
+      ],
+      "persons": [
+        {
+          "id": 38,
+          "status": "Seated",
+          "table_id": 14
+        },
+        {
+          "id": 45,
+          "status": "Seated",
+          "table_id": 19
+        },
+        {
+          "id": 51,
+          "status": "Seated",
+          "table_id": 21
+        },
+        {
+          "id": 58,
+          "status": "Seated",
+          "table_id": 23
+        }
+      ]
+    },
+    {
+      "t": 36.0,
+      "vl_state": "JUST_SEATED",
+      "vl_confidence": 0.9,
+      "total_guests": 3,
+      "seated": 3,
+      "standing": 0,
+      "energy_level": "relaxed",
+      "service_activity": "minimal",
+      "body_language": "Most guests are leaning forward, engaged in conversation.",
+      "behavioral_notes": "The scene shows a group of four guests seated at a table, with one person actively reading from a menu. The environment appears calm, with no signs of urgency or activity beyond the initial stages of dining preparation.",
+      "tables": [
+        {
+          "id": 14,
+          "state": "MID_MEAL",
+          "guests": 1,
+          "wait_time": "~18 min",
+          "seated_since": 16.7,
+          "biometrics": {
+            "stress": 0.1,
+            "engagement": 0.81,
+            "patience": 0.89,
+            "movement": 0.18,
+            "heart_rate": 71
+          }
+        },
+        {
+          "id": 19,
+          "state": "MID_MEAL",
+          "guests": 1,
+          "wait_time": "~18 min",
+          "seated_since": 28.7,
+          "biometrics": {
+            "stress": 0.19,
+            "engagement": 0.88,
+            "patience": 0.93,
+            "movement": 0.24,
+            "heart_rate": 73
+          }
+        },
+        {
+          "id": 21,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 30.6,
+          "biometrics": {
+            "stress": 0.14,
+            "engagement": 0.95,
+            "patience": 0.99,
+            "movement": 0.15,
+            "heart_rate": 68
+          }
+        },
+        {
+          "id": 22,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 31.5,
+          "biometrics": {
+            "stress": 0.1,
+            "engagement": 0.93,
+            "patience": 0.98,
+            "movement": 0.15,
+            "heart_rate": 72
+          }
+        },
+        {
+          "id": 23,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 32.8,
+          "biometrics": {
+            "stress": 0.1,
+            "engagement": 0.98,
+            "patience": 0.94,
+            "movement": 0.24,
+            "heart_rate": 74
+          }
+        }
+      ],
+      "persons": [
+        {
+          "id": 45,
+          "status": "Seated",
+          "table_id": 19
+        },
+        {
+          "id": 51,
+          "status": "Seated",
+          "table_id": 21
+        },
+        {
+          "id": 58,
+          "status": "Seated",
+          "table_id": 23
+        }
+      ]
+    },
+    {
+      "t": 37.0,
+      "vl_state": "JUST_SEATED",
+      "vl_confidence": 0.9,
+      "total_guests": 1,
+      "seated": 1,
+      "standing": 0,
+      "energy_level": "relaxed",
+      "service_activity": "minimal",
+      "body_language": "Most guests are leaning forward, engaged in conversation.",
+      "behavioral_notes": "The scene shows a group of four guests seated at a table, with one person actively reading from a menu. The environment appears calm, with no signs of urgency or activity beyond the initial stages of dining preparation.",
+      "tables": [
+        {
+          "id": 14,
+          "state": "MID_MEAL",
+          "guests": 1,
+          "wait_time": "~18 min",
+          "seated_since": 16.7,
+          "biometrics": {
+            "stress": 0.1,
+            "engagement": 0.81,
+            "patience": 0.89,
+            "movement": 0.18,
+            "heart_rate": 71
+          }
+        },
+        {
+          "id": 19,
+          "state": "MID_MEAL",
+          "guests": 1,
+          "wait_time": "~18 min",
+          "seated_since": 28.7,
+          "biometrics": {
+            "stress": 0.19,
+            "engagement": 0.88,
+            "patience": 0.93,
+            "movement": 0.24,
+            "heart_rate": 73
+          }
+        },
+        {
+          "id": 21,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 30.6,
+          "biometrics": {
+            "stress": 0.14,
+            "engagement": 0.95,
+            "patience": 0.99,
+            "movement": 0.15,
+            "heart_rate": 68
+          }
+        },
+        {
+          "id": 23,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 32.8,
+          "biometrics": {
+            "stress": 0.1,
+            "engagement": 0.98,
+            "patience": 0.94,
+            "movement": 0.24,
+            "heart_rate": 74
+          }
+        }
+      ],
+      "persons": [
+        {
+          "id": 45,
+          "status": "Seated",
+          "table_id": 19
+        }
+      ]
+    },
+    {
+      "t": 38.0,
+      "vl_state": "JUST_SEATED",
+      "vl_confidence": 0.9,
+      "total_guests": 2,
+      "seated": 2,
+      "standing": 0,
+      "energy_level": "relaxed",
+      "service_activity": "minimal",
+      "body_language": "Most guests are leaning forward, engaged in conversation.",
+      "behavioral_notes": "The scene shows a group of four guests seated at a table, with one person actively reading from a menu. The environment appears calm, with no signs of urgency or activity beyond the initial stages of dining preparation.",
+      "tables": [
+        {
+          "id": 14,
+          "state": "MID_MEAL",
+          "guests": 1,
+          "wait_time": "~18 min",
+          "seated_since": 16.7,
+          "biometrics": {
+            "stress": 0.1,
+            "engagement": 0.81,
+            "patience": 0.89,
+            "movement": 0.18,
+            "heart_rate": 71
+          }
+        },
+        {
+          "id": 19,
+          "state": "MID_MEAL",
+          "guests": 1,
+          "wait_time": "~18 min",
+          "seated_since": 28.7,
+          "biometrics": {
+            "stress": 0.19,
+            "engagement": 0.88,
+            "patience": 0.93,
+            "movement": 0.24,
+            "heart_rate": 73
+          }
+        },
+        {
+          "id": 21,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 30.6,
+          "biometrics": {
+            "stress": 0.14,
+            "engagement": 0.95,
+            "patience": 0.99,
+            "movement": 0.15,
+            "heart_rate": 68
+          }
+        },
+        {
+          "id": 23,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 32.8,
+          "biometrics": {
+            "stress": 0.1,
+            "engagement": 0.98,
+            "patience": 0.94,
+            "movement": 0.24,
+            "heart_rate": 74
+          }
+        },
+        {
+          "id": 24,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 37.6,
+          "biometrics": {
+            "stress": 0.17,
+            "engagement": 0.91,
+            "patience": 0.98,
+            "movement": 0.26,
+            "heart_rate": 74
+          }
+        }
+      ],
+      "persons": [
+        {
+          "id": 45,
+          "status": "Seated",
+          "table_id": 19
+        },
+        {
+          "id": 59,
+          "status": "Seated",
+          "table_id": 24
+        }
+      ]
+    },
+    {
+      "t": 39.0,
+      "vl_state": "JUST_SEATED",
+      "vl_confidence": 0.9,
+      "total_guests": 5,
+      "seated": 5,
+      "standing": 0,
+      "energy_level": "relaxed",
+      "service_activity": "minimal",
+      "body_language": "Most guests are leaning slightly forward, indicating engagement.",
+      "behavioral_notes": "The scene suggests a calm atmosphere with guests seated and engaged in conversation or menu selection. Waitstaff are not immediately visible, suggesting a slow start to the meal.",
+      "tables": [
+        {
+          "id": 14,
+          "state": "MID_MEAL",
+          "guests": 1,
+          "wait_time": "~18 min",
+          "seated_since": 16.7,
+          "biometrics": {
+            "stress": 0.1,
+            "engagement": 0.71,
+            "patience": 0.79,
+            "movement": 0.18,
+            "heart_rate": 71
+          }
+        },
+        {
+          "id": 19,
+          "state": "MID_MEAL",
+          "guests": 2,
+          "wait_time": "~18 min",
+          "seated_since": 28.7,
+          "biometrics": {
+            "stress": 0.19,
+            "engagement": 0.78,
+            "patience": 0.83,
+            "movement": 0.24,
+            "heart_rate": 73
+          }
+        },
+        {
+          "id": 21,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 30.6,
+          "biometrics": {
+            "stress": 0.14,
+            "engagement": 0.85,
+            "patience": 0.89,
+            "movement": 0.15,
+            "heart_rate": 68
+          }
+        },
+        {
+          "id": 23,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 32.8,
+          "biometrics": {
+            "stress": 0.1,
+            "engagement": 0.88,
+            "patience": 0.84,
+            "movement": 0.24,
+            "heart_rate": 74
+          }
+        },
+        {
+          "id": 24,
+          "state": "JUST_SEATED",
+          "guests": 2,
+          "wait_time": "~38 min",
+          "seated_since": 37.6,
+          "biometrics": {
+            "stress": 0.17,
+            "engagement": 0.81,
+            "patience": 0.88,
+            "movement": 0.26,
+            "heart_rate": 74
+          }
+        },
+        {
+          "id": 25,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 38.3,
+          "biometrics": {
+            "stress": 0.11,
+            "engagement": 0.8,
+            "patience": 0.82,
+            "movement": 0.2,
+            "heart_rate": 68
+          }
+        },
+        {
+          "id": 26,
+          "state": "JUST_SEATED",
+          "guests": 1,
+          "wait_time": "~38 min",
+          "seated_since": 38.8,
+          "biometrics": {
+            "stress": 0.16,
+            "engagement": 0.77,
+            "patience": 0.85,
+            "movement": 0.18,
+            "heart_rate": 70
+          }
+        }
+      ],
+      "persons": [
+        {
+          "id": 45,
+          "status": "Seated",
+          "table_id": 19
+        },
+        {
+          "id": 59,
+          "status": "Seated",
+          "table_id": 24
+        },
+        {
+          "id": 60,
+          "status": "Seated",
+          "table_id": 25
+        },
+        {
+          "id": 61,
+          "status": "Seated",
+          "table_id": 24
+        },
+        {
+          "id": 62,
+          "status": "Seated",
+          "table_id": 26
+        }
+      ]
+    }
+  ]
+}

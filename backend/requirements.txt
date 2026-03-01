@@ -4,3 +4,9 @@ pydantic
 httpx
 openai
 Pillow
+torch
+torchvision
+transformers
+opencv-python-headless
+accelerate
+tqdm
