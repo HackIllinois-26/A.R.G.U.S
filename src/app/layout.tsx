@@ -7,8 +7,8 @@ const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "A.R.G.U.S. — Restaurant Intelligence",
-  description: "Analytical Restaurant Guest & Utility System — 5-Agent Multi-Location Floor Monitor",
+  title: "A.R.G.U.S. | Restaurant Intelligence",
+  description: "Analytical Restaurant Guest & Utility System. 5-Agent Multi-Location Floor Monitor.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

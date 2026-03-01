@@ -150,7 +150,7 @@ export interface Location {
 }
 
 export const LOCATIONS: Location[] = [
-  { id: "downtown", name: "Downtown Flagship", tables: 20 },
+  { id: "downtown", name: "Maison Lumière", tables: 20 },
   { id: "midtown", name: "Midtown Bistro", tables: 20 },
   { id: "waterfront", name: "Waterfront Grill", tables: 20 },
   { id: "airport", name: "Airport Terminal 3", tables: 20 },

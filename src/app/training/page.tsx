@@ -138,7 +138,7 @@ export default function TrainingPage() {
       {/* Quick start */}
       <div className="glass rounded-2xl p-5">
         <h2 className="text-[10px] font-bold tracking-[0.2em] uppercase text-argus-muted mb-4">
-          Quick Start — Full Pipeline
+          Quick Start | Full Pipeline
         </h2>
         <p className="text-xs text-argus-muted mb-4">
           Run all steps in sequence with a single command:

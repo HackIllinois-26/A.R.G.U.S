@@ -812,36 +812,223 @@ def _build_waiting_text(waiting: list[dict]) -> str:
 
 
 # ---------------------------------------------------------------------------
-# Historical data processing (boot sequence)
+# Historical Analytics — real AI inference for restaurant insights
 # ---------------------------------------------------------------------------
 
-@app.function(image=agent_image, timeout=60)
-async def process_historical_chunk(chunk: list[dict], chunk_index: int) -> dict:
-    """Process one chunk of historical data in parallel."""
-    total_sessions = len(chunk)
-    total_duration = sum(s.get("duration_minutes", 0) for s in chunk)
-    avg_duration = total_duration / total_sessions if total_sessions else 0
-    stress_issues = sum(1 for s in chunk if s.get("peak_stress", 0) > 0.7)
-    lingerers = sum(1 for s in chunk if "lingering" in s.get("issues", []))
+HISTORY_ANALYSIS_CODE = '''\
+import json, sys, math
 
-    by_location: dict[str, list[int]] = {}
-    for s in chunk:
-        loc = s.get("location_id", "unknown")
-        by_location.setdefault(loc, []).append(s.get("duration_minutes", 0))
+data = json.loads(sys.argv[1])
+sessions = data["sessions"]
 
-    location_avgs = {
-        loc: round(sum(durs) / len(durs), 1)
-        for loc, durs in by_location.items()
-    }
+total = len(sessions)
+durations = [s["duration_minutes"] for s in sessions]
+avg_turn = sum(durations) / max(total, 1)
+median_turn = sorted(durations)[total // 2] if total else 0
 
-    return {
-        "chunk_index": chunk_index,
-        "sessions_processed": total_sessions,
-        "avg_duration_minutes": round(avg_duration, 1),
-        "stress_incidents": stress_issues,
-        "lingering_tables": lingerers,
-        "location_averages": location_avgs,
-    }
+by_hour = {}
+for s in sessions:
+    h = int((s["seated_at"] % 86400) / 3600)
+    by_hour.setdefault(h, []).append(s["duration_minutes"])
+
+rush_hours = []
+for h in sorted(by_hour):
+    count = len(by_hour[h])
+    avg = sum(by_hour[h]) / count
+    rush_hours.append({"hour": h, "sessions": count, "avg_turn_min": round(avg, 1)})
+
+peak_hour = max(rush_hours, key=lambda x: x["sessions"]) if rush_hours else None
+
+by_table = {}
+for s in sessions:
+    tid = s["table_id"]
+    by_table.setdefault(tid, []).append(s)
+
+table_stats = []
+for tid, tss in by_table.items():
+    avg_d = sum(t["duration_minutes"] for t in tss) / len(tss)
+    avg_stress = sum(t["avg_stress"] for t in tss) / len(tss)
+    avg_eng = sum(t["avg_engagement"] for t in tss) / len(tss)
+    issues = sum(len(t["issues"]) for t in tss)
+    table_stats.append({
+        "table_id": tid,
+        "total_sessions": len(tss),
+        "avg_turn_min": round(avg_d, 1),
+        "avg_stress": round(avg_stress, 3),
+        "avg_engagement": round(avg_eng, 3),
+        "issue_count": issues,
+    })
+
+table_stats.sort(key=lambda x: x["avg_turn_min"])
+fastest_tables = table_stats[:3]
+slowest_tables = table_stats[-3:]
+
+stress_sessions = [s for s in sessions if s["peak_stress"] > 0.7]
+linger_sessions = [s for s in sessions if "lingering" in s["issues"]]
+
+by_day = {}
+for s in sessions:
+    day = int(s["seated_at"] / 86400)
+    by_day.setdefault(day, []).append(s)
+
+daily_counts = [len(v) for v in by_day.values()]
+busiest_day_count = max(daily_counts) if daily_counts else 0
+avg_daily = sum(daily_counts) / max(len(daily_counts), 1)
+
+by_party_size = {}
+for s in sessions:
+    ps = s["party_size"]
+    by_party_size.setdefault(ps, []).append(s["duration_minutes"])
+
+party_size_stats = []
+for ps in sorted(by_party_size):
+    durs = by_party_size[ps]
+    party_size_stats.append({
+        "party_size": ps, "count": len(durs), "avg_turn_min": round(sum(durs)/len(durs), 1)
+    })
+
+print(json.dumps({
+    "total_sessions": total,
+    "avg_turn_min": round(avg_turn, 1),
+    "median_turn_min": round(median_turn, 1),
+    "rush_hours": rush_hours,
+    "peak_hour": peak_hour,
+    "fastest_tables": fastest_tables,
+    "slowest_tables": slowest_tables,
+    "stress_incidents": len(stress_sessions),
+    "linger_incidents": len(linger_sessions),
+    "busiest_day_sessions": busiest_day_count,
+    "avg_daily_sessions": round(avg_daily, 1),
+    "party_size_breakdown": party_size_stats,
+    "table_stats": table_stats,
+}))
+'''
+
+INSIGHTS_PROMPT = """\
+You are A.R.G.U.S., an AI restaurant analytics system. Analyze this restaurant's \
+historical data and provide actionable insights.
+
+STATISTICAL SUMMARY:
+{stats_json}
+
+SUPERMEMORY CONTEXT:
+{memory_context}
+
+Based on this data, provide a detailed analysis. Be specific with numbers. \
+Reference actual table IDs, hours, and patterns.
+
+Respond with ONLY valid JSON:
+{{
+  "overall_grade": "A" | "B" | "C" | "D" | "F",
+  "grade_reasoning": "one sentence",
+  "rush_analysis": {{
+    "peak_hours": "description of busiest times",
+    "recommendation": "how to handle rush better"
+  }},
+  "table_performance": {{
+    "best_tables": "which tables turn fastest and why",
+    "worst_tables": "which tables are slowest and what to fix",
+    "recommendation": "specific layout or assignment changes"
+  }},
+  "service_quality": {{
+    "stress_summary": "how often guests get stressed and when",
+    "engagement_summary": "overall engagement patterns",
+    "recommendation": "what staff should do differently"
+  }},
+  "improvement_areas": [
+    "specific actionable improvement 1",
+    "specific actionable improvement 2",
+    "specific actionable improvement 3"
+  ],
+  "waiter_recommendations": {{
+    "high_stress_tables": "which tables need the best servers",
+    "quick_turn_strategy": "how to speed up slow tables",
+    "upsell_opportunities": "where engagement is high and turns are long"
+  }}
+}}
+"""
+
+
+@app.function(image=agent_image, timeout=30)
+async def analyze_historical_stats(sessions: list[dict]) -> dict:
+    """Crunch historical stats in a sandboxed container."""
+    sandbox_input = json.dumps({"sessions": sessions})
+
+    sb = modal.Sandbox.create(
+        image=modal.Image.debian_slim(python_version="3.12"),
+        app=app,
+        timeout=20,
+    )
+    proc = sb.exec("python", "-c", HISTORY_ANALYSIS_CODE, sandbox_input)
+    output = proc.stdout.read().strip()
+    sb.terminate()
+    sb.detach()
+
+    try:
+        return json.loads(output)
+    except (json.JSONDecodeError, Exception):
+        return {"error": "Failed to parse stats", "raw": output[:500]}
+
+
+@app.function(
+    image=agent_image,
+    secrets=[modal.Secret.from_name("argus-secrets")],
+    timeout=60,
+)
+async def generate_historical_insights(stats: dict) -> dict:
+    """Use LLM + Supermemory to generate actionable restaurant insights."""
+    from openai import AsyncOpenAI
+    from supermemory_client import TableMemory
+
+    memory = TableMemory(api_key=os.environ.get("SUPERMEMORY_API_KEY", ""))
+
+    try:
+        memory_context = await memory.get_shift_context(
+            restaurant_id="downtown",
+            day_of_week="all",
+            hour=0,
+        )
+    except Exception:
+        memory_context = "No long-term memory available yet."
+
+    stats_summary = json.dumps({
+        k: v for k, v in stats.items()
+        if k not in ("table_stats",)
+    }, indent=2)[:2000]
+
+    prompt = INSIGHTS_PROMPT.format(
+        stats_json=stats_summary,
+        memory_context=str(memory_context)[:500],
+    )
+
+    vllm_url = await serve_llm.get_web_url.aio()
+    client = AsyncOpenAI(base_url=f"{vllm_url}/v1", api_key="not-needed")
+
+    t0 = time.time()
+    completion = await client.chat.completions.create(
+        model="argus-vision",
+        messages=[{"role": "user", "content": prompt}],
+        temperature=0.3,
+        max_tokens=800,
+    )
+    latency = time.time() - t0
+
+    raw = completion.choices[0].message.content or "{}"
+    try:
+        result = json.loads(raw)
+    except json.JSONDecodeError:
+        result = {
+            "overall_grade": "B",
+            "grade_reasoning": "Analysis could not be fully parsed.",
+            "rush_analysis": {"peak_hours": "Data pending", "recommendation": "Collect more data"},
+            "table_performance": {"best_tables": "Pending", "worst_tables": "Pending", "recommendation": "Pending"},
+            "service_quality": {"stress_summary": "Pending", "engagement_summary": "Pending", "recommendation": "Pending"},
+            "improvement_areas": ["Collect more operational data", "Monitor stress patterns", "Track server assignments"],
+            "waiter_recommendations": {"high_stress_tables": "Pending", "quick_turn_strategy": "Pending", "upsell_opportunities": "Pending"},
+        }
+
+    result["inference_latency_ms"] = int(latency * 1000)
+    return result
 
 
 @app.function(
@@ -849,40 +1036,25 @@ async def process_historical_chunk(chunk: list[dict], chunk_index: int) -> dict:
     secrets=[modal.Secret.from_name("argus-secrets")],
     timeout=120,
 )
-async def boot_historical_processing() -> dict:
-    """On boot: process 6 weeks of historical data across 10 parallel containers."""
+async def run_history_analysis() -> dict:
+    """Full historical analysis: generate data, crunch stats in sandbox, get AI insights."""
     import asyncio
     from mock_data import generate_historical_data
 
     t0 = time.time()
-    all_data = generate_historical_data(num_weeks=6)
-    total = len(all_data)
+    sessions = generate_historical_data(num_weeks=6)
 
-    num_chunks = 10
-    chunk_size = total // num_chunks
-    chunks = []
-    for i in range(num_chunks):
-        start = i * chunk_size
-        end = start + chunk_size if i < num_chunks - 1 else total
-        chunks.append(all_data[start:end])
+    stats = await analyze_historical_stats.remote.aio(sessions=sessions)
+    if "error" in stats:
+        return {"error": stats["error"], "processing_time_ms": int((time.time() - t0) * 1000)}
 
-    tasks = [
-        process_historical_chunk.remote.aio(chunk=c, chunk_index=i)
-        for i, c in enumerate(chunks)
-    ]
-    results = await asyncio.gather(*tasks, return_exceptions=True)
-
-    processed = [r for r in results if not isinstance(r, Exception)]
-    total_processed = sum(r.get("sessions_processed", 0) for r in processed)
-    latency = int((time.time() - t0) * 1000)
+    insights = await generate_historical_insights.remote.aio(stats=stats)
 
     return {
-        "total_sessions": total,
-        "sessions_processed": total_processed,
-        "chunks_completed": len(processed),
-        "chunks_failed": len(results) - len(processed),
-        "processing_time_ms": latency,
-        "chunk_results": processed,
+        "stats": stats,
+        "insights": insights,
+        "total_sessions": len(sessions),
+        "processing_time_ms": int((time.time() - t0) * 1000),
     }
 
 
@@ -913,12 +1085,12 @@ async def api_analyze(body: dict) -> dict:
 @app.function(
     image=agent_image,
     secrets=[modal.Secret.from_name("argus-secrets")],
-    timeout=120,
+    timeout=180,
 )
 @modal.fastapi_endpoint(method="POST")
-async def api_boot(body: dict) -> dict:
-    """Boot: process 6 weeks of historical data in parallel."""
-    result = await boot_historical_processing.remote.aio()
+async def api_history(body: dict) -> dict:
+    """Run full historical analysis with AI inference."""
+    result = await run_history_analysis.remote.aio()
     return result
 
 

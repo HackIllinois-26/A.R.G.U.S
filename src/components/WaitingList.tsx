@@ -36,7 +36,7 @@ export function WaitingList({ parties }: Props) {
         </div>
         {parties.length > 0 && (
           <p className="text-[9px] text-argus-faint mt-1 tracking-wide">
-            Ordered by Presage urgency — not arrival time
+            Ordered by Presage urgency, not arrival time
           </p>
         )}
       </div>
@@ -128,7 +128,7 @@ function WaitingPartyRow({ party, index }: { party: WaitingParty; index: number 
         <div className="mt-2 flex items-center gap-1.5 bg-red-500/10 rounded px-2 py-1">
           <span className="text-[10px]">&#x26A0;&#xFE0F;</span>
           <span className="text-[10px] font-semibold text-red-300">
-            Exit behavior detected — intervene now
+            Exit behavior detected, intervene now
           </span>
         </div>
       )}

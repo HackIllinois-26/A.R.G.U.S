@@ -43,9 +43,9 @@ MOTION_HISTORY = 4          # frames of centroid history for motion calc
 MOTION_THRESHOLD_MIN = 8    # min pixels to count as moving
 MOTION_THRESHOLD_PCT = 0.03 # or 3% of bbox height
 MIN_TRACK_FRAMES = 2        # frames before track is considered stable
-MAX_MISSING_FRAMES = 10     # frames before track is dropped
+MAX_MISSING_FRAMES = 15     # frames before track is dropped
 TABLE_CLUSTER_DIST = 280    # max pixels between seated persons in same table
-IOU_MATCH_THRESH = 0.20     # minimum IoU for tracker matching
+IOU_MATCH_THRESH = 0.15     # minimum IoU for tracker matching
 STANDING_ASPECT_RATIO = 1.7 # bbox h/w above this → likely standing (not just "not moving")
 TABLE_REMATCH_DIST = 200    # max px between centroids to reuse a table slot
 
@@ -475,7 +475,7 @@ def _pick_best_video():
     volumes={VOL_PATH: training_vol},
     timeout=30 * 60,
 )
-def render_demo_video(max_seconds: int = 40, fps_out: int = 12) -> dict:
+def render_demo_video(max_seconds: int = 120, fps_out: int = 12) -> dict:
     import cv2
     import numpy as np
     from PIL import Image, ImageDraw, ImageFont
@@ -553,8 +553,8 @@ def render_demo_video(max_seconds: int = 40, fps_out: int = 12) -> dict:
         vl_state = cur_vl.get("state", "EMPTY") if cur_vl else "EMPTY"
         vl_bio = cur_vl.get("estimated_biometrics", {}) if cur_vl else {}
 
-        # ── YOLO detection ──
-        results = model(frame, verbose=False, conf=0.35)
+        # ── YOLO detection (low threshold + larger input for distant people) ──
+        results = model(frame, verbose=False, conf=0.20, imgsz=1280)
 
         person_dets: list[tuple] = []
         other_dets: list[tuple] = []
@@ -565,12 +565,12 @@ def render_demo_video(max_seconds: int = 40, fps_out: int = 12) -> dict:
                 conf = float(box.conf[0])
                 x1, y1, x2, y2 = map(int, box.xyxy[0])
                 box_area = (x2 - x1) * (y2 - y1)
-                if box_area > frame_area * 0.35 or box_area < 300:
+                if box_area > frame_area * 0.35 or box_area < 120:
                     continue
 
-                if cid in YOLO_CLASSES_TRACK and conf >= 0.35:
+                if cid in YOLO_CLASSES_TRACK and conf >= 0.20:
                     person_dets.append((x1, y1, x2, y2, conf))
-                elif cid in YOLO_CLASSES_SHOW and conf >= 0.40:
+                elif cid in YOLO_CLASSES_SHOW and conf >= 0.35:
                     label, color = YOLO_CLASSES_SHOW[cid]
                     other_dets.append((x1, y1, x2, y2, label, conf, color))
 

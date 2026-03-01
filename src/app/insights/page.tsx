@@ -11,7 +11,7 @@ const LOCATIONS = [
 const PATTERNS = [
   { label: "Busiest day", value: "Saturday", detail: "38% more sessions than weekday avg" },
   { label: "Highest stress time", value: "7:45 – 8:15 PM", detail: "Wait times peak, kitchen bottleneck" },
-  { label: "Fastest location", value: "Airport Terminal 3", detail: "35m avg turn — travelers eat quickly" },
+  { label: "Fastest location", value: "Airport Terminal 3", detail: "35m avg turn, travelers eat quickly" },
   { label: "Most lingering", value: "Waterfront Grill", detail: "22% of sessions exceed 90 minutes" },
 ];
 

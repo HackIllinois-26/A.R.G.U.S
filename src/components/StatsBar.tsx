@@ -24,7 +24,7 @@ export function StatsBar({ stats, sessionTotal, isRushHour, waitingCount, autoRe
       <div className="flex items-center gap-2 mb-3">
         <span className={`w-2 h-2 rounded-full animate-pulse-dot ${isRushHour ? "bg-red-500" : autoRefresh ? "bg-emerald-500" : "bg-argus-dim"}`} />
         <span className="text-[10px] font-semibold tracking-[0.15em] uppercase text-argus-dim">
-          Modal Inference — 5 Agents
+          Modal Inference | 5 Agents
         </span>
         <div className="ml-auto flex items-center gap-2">
           {autoRefresh && !isRushHour && (
