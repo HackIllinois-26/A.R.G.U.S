@@ -17,6 +17,7 @@ import { LOCATIONS } from "../../types/argus";
 const API_BASE = process.env.NEXT_PUBLIC_ARGUS_API ?? "https://girishskandhas--argus";
 const EP = {
   rush: `${API_BASE}-api-rush-hour.modal.run`,
+  recommend: `${API_BASE}-api-recommend.modal.run`,
 };
 const RUSH_MS = 30_000;
 const REFRESH_MS = 60_000;
@@ -205,14 +206,16 @@ function MiniTable({
 
         {!isEmpty ? (
           <>
-            <div className="flex items-center justify-between text-[11px] mb-2">
+            <div className="flex items-center justify-between text-[11px] mb-1">
               <span className="text-argus-muted">{table.party_size} guests</span>
-              {table.predicted_turn_low != null && table.predicted_turn_high != null && (
-                <span className="text-argus-dim font-mono">
-                  ~{table.predicted_turn_low}-{table.predicted_turn_high}m
-                </span>
-              )}
             </div>
+            {(table.predicted_turn_minutes != null || (table.predicted_turn_low != null && table.predicted_turn_high != null)) && (
+              <p className="text-xs font-semibold text-cyan-400 mb-2">
+                Free in ~{table.predicted_turn_minutes != null
+                  ? `${table.predicted_turn_minutes}`
+                  : `${table.predicted_turn_low}-${table.predicted_turn_high}`} min
+              </p>
+            )}
 
             <div className="flex gap-3">
               <div className="flex-1">
@@ -450,6 +453,7 @@ export function Dashboard() {
   const [waitingList, setWaitingList] = useState<WaitingParty[]>(mockWaitingList());
   const [recommendation, setRecommendation] = useState<HostRec | null>(mockRecommendation());
   const [lastUpdate, setLastUpdate] = useState("");
+  const [aiLoading, setAiLoading] = useState(false);
 
   const [selectedTable, setSelectedTable] = useState<string | null>(null);
 
@@ -460,6 +464,38 @@ export function Dashboard() {
     return () => clearInterval(t);
   }, []);
   useEffect(() => { setLastUpdate(new Date().toLocaleTimeString()); }, [recommendation]);
+
+  const fetchAiRecommendation = useCallback(async (currentTables: TableStatus[]) => {
+    setAiLoading(true);
+    try {
+      const payload = {
+        location_id: LOC.id,
+        tables: currentTables.map(t => ({
+          table_id: t.table_id,
+          state: t.state,
+          party_size: t.party_size,
+          stress_avg: t.stress_avg,
+          engagement_avg: t.engagement_avg,
+          predicted_turn_minutes: t.predicted_turn_minutes,
+          vibe: t.vibe,
+          urgency: t.urgency,
+        })),
+      };
+      const r = await fetch(EP.recommend, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      if (!r.ok) throw new Error(`HTTP ${r.status}`);
+      const d = await r.json();
+      if (d.recommendation) setRecommendation(d.recommendation);
+      if (d.waiting_list?.length) setWaitingList(d.waiting_list);
+    } catch {
+      // keep existing mock data on failure
+    } finally {
+      setAiLoading(false);
+    }
+  }, [LOC.id]);
 
   const fireRush = useCallback(async (idx: number) => {
     setLoading(true);
@@ -481,11 +517,25 @@ export function Dashboard() {
   }, [rush, phase, fireRush]);
 
   useEffect(() => () => { if (rushRef.current) clearInterval(rushRef.current); }, []);
+
+  // Initial AI recommendation fetch on mount
+  useEffect(() => {
+    const initial = mockLoc(LOC);
+    fetchAiRecommendation(initial.tables);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // Refresh table mock data periodically; re-fetch AI recommendation every 60s
+  const aiRefreshRef = useRef<ReturnType<typeof setInterval> | null>(null);
   useEffect(() => {
     if (rush) return;
-    const t = setInterval(() => { setLocResults([mockLoc(LOC)]); setWaitingList(mockWaitingList()); setRecommendation(mockRecommendation()); }, REFRESH_MS);
-    return () => clearInterval(t);
-  }, [rush]);
+    const t = setInterval(() => { setLocResults([mockLoc(LOC)]); }, REFRESH_MS);
+    aiRefreshRef.current = setInterval(() => {
+      const fresh = mockLoc(LOC);
+      fetchAiRecommendation(fresh.tables);
+    }, 60_000);
+    return () => { clearInterval(t); if (aiRefreshRef.current) clearInterval(aiRefreshRef.current); };
+  }, [rush, fetchAiRecommendation, LOC]);
 
   const cur = locResults[0];
   const tables = cur?.tables ?? [];
@@ -585,7 +635,10 @@ export function Dashboard() {
               />
             )}
           </AnimatePresence>
-          <HostRecommendation recommendation={recommendation} locationName={locName} updatedAt={lastUpdate} />
+          <HostRecommendation
+            recommendation={recommendation}
+            updatedAt={lastUpdate}
+          />
           <WaitingList parties={waitingList} />
         </div>
       </div>

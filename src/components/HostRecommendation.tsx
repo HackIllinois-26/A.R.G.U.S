@@ -12,11 +12,10 @@ const URGENCY_STYLE: Record<string, { border: string; glow: string; icon: string
 
 interface Props {
   recommendation: Rec | null;
-  locationName: string;
   updatedAt?: string;
 }
 
-export function HostRecommendation({ recommendation, locationName, updatedAt }: Props) {
+export function HostRecommendation({ recommendation, updatedAt }: Props) {
   const rec = recommendation;
   const style = URGENCY_STYLE[rec?.urgency ?? "low"] ?? URGENCY_STYLE.low;
 
@@ -24,15 +23,10 @@ export function HostRecommendation({ recommendation, locationName, updatedAt }: 
     <div className={`glass rounded-2xl overflow-hidden border ${style.border} shadow-lg ${style.glow}`}>
       {/* Header */}
       <div className="px-4 pt-4 pb-3 border-b border-argus-glass-border">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <span className="text-sm">&#x1F9E0;</span>
-            <span className="text-[11px] font-bold tracking-[0.15em] uppercase text-argus-muted">
-              Host Recommendation
-            </span>
-          </div>
-          <span className="text-[9px] text-argus-faint font-mono">
-            {locationName}
+        <div className="flex items-center gap-2">
+          <span className="text-sm">&#x1F9E0;</span>
+          <span className="text-[11px] font-bold tracking-[0.15em] uppercase text-argus-muted">
+            AI Recommendation
           </span>
         </div>
       </div>

@@ -9,7 +9,6 @@ const NAV_ITEMS = [
   { href: "/", label: "Floor" },
   { href: "/history", label: "History" },
   { href: "/demo", label: "Demo" },
-  { href: "/about", label: "About" },
 ];
 
 export function NavBar() {

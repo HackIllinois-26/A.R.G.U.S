@@ -39,14 +39,14 @@ demo_image = (
 
 # ── constants ──────────────────────────────────────────────────────────────
 
-MOTION_HISTORY = 4          # frames of centroid history for motion calc
-MOTION_THRESHOLD_MIN = 8    # min pixels to count as moving
-MOTION_THRESHOLD_PCT = 0.03 # or 3% of bbox height
+MOTION_HISTORY = 6          # frames of centroid history for motion calc
+MOTION_THRESHOLD_MIN = 3    # min pixels per frame to count as moving (very sensitive)
+MOTION_THRESHOLD_PCT = 0.015 # or 1.5% of bbox height
 MIN_TRACK_FRAMES = 2        # frames before track is considered stable
 MAX_MISSING_FRAMES = 15     # frames before track is dropped
 TABLE_CLUSTER_DIST = 280    # max pixels between seated persons in same table
-IOU_MATCH_THRESH = 0.15     # minimum IoU for tracker matching
-STANDING_ASPECT_RATIO = 1.7 # bbox h/w above this → likely standing (not just "not moving")
+IOU_MATCH_THRESH = 0.20     # minimum IoU for tracker matching
+STANDING_ASPECT_RATIO = 1.5 # bbox h/w above this → likely standing
 TABLE_REMATCH_DIST = 200    # max px between centroids to reuse a table slot
 
 # compressed state durations for 40s demo (seconds)
@@ -106,16 +106,18 @@ def _centroid(box):
 
 
 def _is_moving(history, bbox_h):
-    if len(history) < MOTION_HISTORY + 1:
+    if len(history) < 3:
         return False
-    total = 0.0
-    for i in range(-MOTION_HISTORY, 0):
+    n = min(MOTION_HISTORY, len(history) - 1)
+    displacements = []
+    for i in range(-n, 0):
         dx = history[i][0] - history[i - 1][0]
         dy = history[i][1] - history[i - 1][1]
-        total += math.hypot(dx, dy)
-    avg = total / MOTION_HISTORY
+        displacements.append(math.hypot(dx, dy))
+    avg = sum(displacements) / len(displacements)
+    peak = max(displacements)
     thresh = max(MOTION_THRESHOLD_MIN, bbox_h * MOTION_THRESHOLD_PCT)
-    return avg > thresh
+    return avg > thresh or peak > thresh * 2
 
 
 def _wait_time(state, first_seen_s, current_s):
@@ -207,8 +209,19 @@ class PersonTracker:
             bh = det[3] - det[1]
             bw = det[2] - det[0]
             trk.moving = _is_moving(trk.centroid_history, bh)
-            if trk.moving or bh / max(bw, 1) > STANDING_ASPECT_RATIO:
+            tall = bh / max(bw, 1) > STANDING_ASPECT_RATIO
+            if trk.moving or tall:
                 trk.status = "Standing"
+            elif trk.status == "Standing" and len(trk.centroid_history) >= 3:
+                recent = trk.centroid_history[-3:]
+                total_d = sum(
+                    math.hypot(recent[j][0] - recent[j-1][0], recent[j][1] - recent[j-1][1])
+                    for j in range(1, len(recent))
+                )
+                if total_d > max(MOTION_THRESHOLD_MIN, bh * MOTION_THRESHOLD_PCT):
+                    trk.status = "Standing"
+                else:
+                    trk.status = "Seated"
             else:
                 trk.status = "Seated"
             trk.missing = 0
@@ -554,7 +567,7 @@ def render_demo_video(max_seconds: int = 120, fps_out: int = 12) -> dict:
         vl_bio = cur_vl.get("estimated_biometrics", {}) if cur_vl else {}
 
         # ── YOLO detection (low threshold + larger input for distant people) ──
-        results = model(frame, verbose=False, conf=0.20, imgsz=1280)
+        results = model(frame, verbose=False, conf=0.30, imgsz=1280)
 
         person_dets: list[tuple] = []
         other_dets: list[tuple] = []
@@ -568,11 +581,19 @@ def render_demo_video(max_seconds: int = 120, fps_out: int = 12) -> dict:
                 if box_area > frame_area * 0.35 or box_area < 120:
                     continue
 
-                if cid in YOLO_CLASSES_TRACK and conf >= 0.20:
+                if cid in YOLO_CLASSES_TRACK and conf >= 0.30:
                     person_dets.append((x1, y1, x2, y2, conf))
                 elif cid in YOLO_CLASSES_SHOW and conf >= 0.35:
                     label, color = YOLO_CLASSES_SHOW[cid]
                     other_dets.append((x1, y1, x2, y2, label, conf, color))
+
+        # ── suppress overlapping person detections ──
+        person_dets.sort(key=lambda d: d[4], reverse=True)
+        keep: list[tuple] = []
+        for det in person_dets:
+            if all(_iou(det[:4], k[:4]) < 0.40 for k in keep):
+                keep.append(det)
+        person_dets = keep
 
         # ── update tracker ──
         tracker.update(person_dets, count_out)
@@ -600,20 +621,18 @@ def render_demo_video(max_seconds: int = 120, fps_out: int = 12) -> dict:
         for x1, y1, x2, y2, _, _, color in other_dets:
             cv2.rectangle(frame, (x1, y1), (x2, y2), color, 1)
 
-        # ── draw person boxes (seated only — standing people are tracked but not boxed) ──
+        # ── draw person boxes ──
         for trk in stable:
-            if trk.status == "Standing":
-                continue
-
             x1, y1, x2, y2 = trk.bbox
 
-            if trk.table_id is not None:
+            if trk.status == "Standing":
+                color = STANDING_COLOR
+            elif trk.table_id is not None:
                 cidx = (trk.table_id - 1) % len(TABLE_COLORS)
                 color = TABLE_COLORS[cidx]
             else:
                 color = (0, 229, 255)
 
-            # semi-transparent fill
             ov2 = frame.copy()
             cv2.rectangle(ov2, (x1, y1), (x2, y2), color, -1)
             cv2.addWeighted(ov2, 0.08, frame, 0.92, 0, frame)
@@ -648,21 +667,21 @@ def render_demo_video(max_seconds: int = 120, fps_out: int = 12) -> dict:
         draw.text((W - 100, 16), f"F {count_out:04d}", fill=(100, 116, 139, 255), font=font_sm)
         draw.rectangle([0, 48, W, 50], fill=(0, 229, 255, 60))
 
-        # Person labels (seated only)
+        # Person labels
         for trk in stable:
-            if trk.status == "Standing":
-                continue
-
             x1, y1, x2, y2 = trk.bbox
-            if trk.table_id is not None:
+
+            if trk.status == "Standing":
+                color = STANDING_COLOR
+                tag = f"P{trk.id} Walking"
+            elif trk.table_id is not None:
                 cidx = (trk.table_id - 1) % len(TABLE_COLORS)
                 color = TABLE_COLORS[cidx]
+                tag = f"P{trk.id} Seated T{trk.table_id}"
             else:
                 color = (0, 229, 255)
+                tag = f"P{trk.id} Seated"
 
-            tag = f"P{trk.id} Seated"
-            if trk.table_id is not None:
-                tag += f" T{trk.table_id}"
             bb = draw.textbbox((0, 0), tag, font=font_sm)
             tw, th = bb[2] - bb[0], bb[3] - bb[1]
             draw.rectangle([x1, y1 - th - 8, x1 + tw + 12, y1], fill=(*color, 210))
