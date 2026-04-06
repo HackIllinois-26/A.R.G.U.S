@@ -1,4 +1,6 @@
 backend/
 __pycache__/
+*.py
 *.pyc
+requirements-modal.txt
 ABOUT.md
