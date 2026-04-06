@@ -1,5 +1,6 @@
 {
-  "version": 3,
+  "version": 2,
+  "framework": "nextjs",
   "builds": [
     {
       "src": "package.json",
@@ -9,5 +10,15 @@
   "routes": [
     { "src": "/(.*)", "dest": "/$1" }
   ],
-  "excludeFiles": ["backend/**", "requirements-modal.txt", "**/*.py", "**/__pycache__/**"]
+  "functions": {
+    "api/**/*.py": {
+      "runtime": "@vercel/node"
+    }
+  },
+  "excludeFiles": [
+    "backend/**",
+    "**/*.py",
+    "**/__pycache__/**",
+    "requirements-modal.txt"
+  ]
 }
