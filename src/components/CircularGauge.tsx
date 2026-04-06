@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 
 interface Props {
-  value: number; // 0–1
+  value: number;
   size?: number;
   strokeWidth?: number;
   label?: string;
@@ -35,7 +35,7 @@ export function CircularGauge({ value, size = 52, strokeWidth = 5, label }: Prop
   return (
     <div className="relative flex items-center justify-center" style={{ width: size, height: size }}>
       <svg width={size} height={size} className="absolute -rotate-90">
-        <circle cx={size / 2} cy={size / 2} r={r} stroke="#334155" strokeWidth={strokeWidth} fill="none" opacity={0.4} />
+        <circle cx={size / 2} cy={size / 2} r={r} stroke="rgba(255,255,255,0.08)" strokeWidth={strokeWidth} fill="none" />
         <motion.circle
           cx={size / 2} cy={size / 2} r={r}
           strokeWidth={strokeWidth} fill="none"
@@ -44,8 +44,8 @@ export function CircularGauge({ value, size = 52, strokeWidth = 5, label }: Prop
         />
       </svg>
       <div className="flex flex-col items-center z-10">
-        <span className="text-[11px] font-bold text-argus-text">{Math.round(value * 100)}</span>
-        {label && <span className="text-[8px] font-semibold text-argus-dim -mt-0.5">{label}</span>}
+        <span className="text-xs font-semibold text-white/90">{Math.round(value * 100)}</span>
+        {label && <span className="text-[10px] text-white/30 -mt-0.5">{label}</span>}
       </div>
     </div>
   );

@@ -4,17 +4,17 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 
-  --color-argus-base: #030712;
-  --color-argus-surface: #0f172a;
-  --color-argus-card: #1e293b;
-  --color-argus-glass: rgba(30, 41, 59, 0.65);
-  --color-argus-glass-border: rgba(71, 85, 105, 0.4);
-  --color-argus-border: #334155;
+  --color-argus-base: #000000;
+  --color-argus-surface: #0a0a0a;
+  --color-argus-card: #111111;
+  --color-argus-glass: rgba(255, 255, 255, 0.03);
+  --color-argus-glass-border: rgba(255, 255, 255, 0.08);
+  --color-argus-border: rgba(255, 255, 255, 0.06);
 
-  --color-argus-text: #f8fafc;
-  --color-argus-muted: #94a3b8;
-  --color-argus-dim: #64748b;
-  --color-argus-faint: #475569;
+  --color-argus-text: #ffffff;
+  --color-argus-muted: rgba(255, 255, 255, 0.6);
+  --color-argus-dim: rgba(255, 255, 255, 0.4);
+  --color-argus-faint: rgba(255, 255, 255, 0.2);
 
   --color-argus-accent: #10b981;
   --color-argus-accent-dim: #059669;
@@ -30,51 +30,44 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Glass card */
 .glass {
   background: var(--color-argus-glass);
   border: 1px solid var(--color-argus-glass-border);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
-/* Pulsing dot */
+.text-gradient {
+  background: linear-gradient(135deg, #ffffff 0%, #10b981 50%, #f97316 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 @keyframes pulse-dot {
   0%, 100% { opacity: 1; }
-  50% { opacity: 0.2; }
+  50% { opacity: 0.3; }
 }
 .animate-pulse-dot {
-  animation: pulse-dot 1.6s ease-in-out infinite;
+  animation: pulse-dot 2s ease-in-out infinite;
 }
 
-/* Ring pulse (boot screen) */
-@keyframes ring-pulse {
-  0%, 100% { transform: scale(1); opacity: 0.3; }
-  50% { transform: scale(1.3); opacity: 0.7; }
-}
-.animate-ring-pulse {
-  animation: ring-pulse 2.4s ease-in-out infinite;
-}
-
-/* Subtle shimmer for loading states */
 @keyframes shimmer {
   0% { background-position: -200% 0; }
   100% { background-position: 200% 0; }
 }
 .animate-shimmer {
-  background: linear-gradient(90deg, transparent 25%, rgba(255,255,255,0.04) 50%, transparent 75%);
+  background: linear-gradient(90deg, transparent 25%, rgba(255,255,255,0.03) 50%, transparent 75%);
   background-size: 200% 100%;
   animation: shimmer 2s ease-in-out infinite;
 }
 
-/* Scrollbar */
-::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar { width: 6px; height: 6px; }
 ::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: #334155; border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: #475569; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.2); }
 
-/* Selection */
 ::selection {
-  background: rgba(16, 185, 129, 0.3);
-  color: #f8fafc;
+  background: rgba(16, 185, 129, 0.25);
+  color: #ffffff;
 }
