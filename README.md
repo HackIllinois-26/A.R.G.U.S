@@ -30,46 +30,8 @@ Person detection uses YOLOv8m with IoU-based tracking. Biometric signals (heart 
 ## Pages
 
 - `/` — Live floor overview with 20-table grid, click-to-expand detail panels, host recommendations, waiting list
-- `/history` — Historical analytics powered by real AI inference (sandbox + LLM), rush patterns, table performance, service quality
 - `/demo` — Pre-rendered 120s demo video with synced tracking data and timeline
 - `/about` — System overview, tech stack, and agent architecture
-
-## Running locally
-
-```bash
-npm install
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000).
-
-## Backend
-
-The backend runs on Modal. To deploy:
-
-```bash
-modal deploy backend/app.py
-```
-
-To re-render the demo video:
-
-```bash
-modal run backend/demo_render.py
-modal volume get argus-training-data demo/demo_web.mp4 public/demo/demo.mp4 --force
-modal volume get argus-training-data demo/analysis_timeline.json public/demo/analysis_timeline.json --force
-```
-
-To run the training pipeline (frame extraction, VL labeling, CLIP fine-tuning, Supermemory population):
-
-```bash
-modal run backend/training.py --action full
-```
-
-## Environment
-
-The Modal secret `argus-secrets` needs:
-
-- `SUPERMEMORY_API_KEY` — for long-term memory reads/writes
 
 ## API Endpoints
 
